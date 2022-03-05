@@ -1,0 +1,13 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"sass/style.scss",
+		"sass/components/_components.scss",
+		"sass/components/content/_single.scss",
+		"sass/components/header/_menu.scss",
+		"sass/components/footer/_footer.scss"
+	],
+	"names": [],
+	"mappings": "AAAA;;;;;;;;EAQE;AAEF;;;;;;gEAMgE;AChBhE;;gEAEgE;AAGhE;gDACgD"
+}

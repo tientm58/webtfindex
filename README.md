@@ -1,8 +1,9 @@
 # webtfindex
-Build wordpress website for TFindex
+Build WordPress website for TFindex
 
 # Install
-- Download Wordpress from https://wordpress.org/
-- Clone code to wp-content
+- Download the latest WordPress from https://wordpress.org/
+- Remove `wp-content` folder
+- Clone code to `wp-content`
 - Restore database
 - Enjoy

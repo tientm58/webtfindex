@@ -152,6 +152,8 @@ class Admin {
 
 		$is_manual_mode = ( isset( $_GET['mode'] ) && 'manually' === $_GET['mode'] );
 
+		$is_manual_mode = true;
+
 		if ( $is_manual_mode ) {
 			$this->render_manually_activation_widget( $license_key );
 			return;

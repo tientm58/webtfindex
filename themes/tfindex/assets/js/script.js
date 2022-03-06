@@ -28,7 +28,7 @@ jQuery( document ).ready( function( $ ) {
 			input = input ? parseInt( input, 10 ) : 0;
 
 			$this.val( function() {
-				return ( input === 0 ) ? '' : input.toLocaleString( 'en-US' );
+				return ( input === 0 ) ? '' : input.toLocaleString();
 			} );
 		} );
 	} );

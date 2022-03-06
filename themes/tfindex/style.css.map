@@ -5,9 +5,10 @@
 		"sass/style.scss",
 		"sass/components/_components.scss",
 		"sass/components/content/_single.scss",
+		"sass/components/content/_contact.scss",
 		"sass/components/header/_menu.scss",
 		"sass/components/footer/_footer.scss"
 	],
 	"names": [],
-	"mappings": "AAAA;;;;;;;;EAQE;AAEF;;;;;;gEAMgE;AChBhE;;gEAEgE;AAGhE;gDACgD"
+	"mappings": "AAAA;;;;;;;;EAQE;AAEF;;;;;;gEAMgE;AChBhE;;gEAEgE;AEFhE,AACE,yBADuB,CACvB,MAAM,AAAA,eAAe,CAAC;CACpB,KAAK,EAAE,IAAI;CACZ;;AFGH;gDACgD;AIPhD,AACE,YADU,CACV,EAAE,AAAA,aAAa,CAAC;CACd,KAAK,EAAE,OAAO;CACf"
 }

@@ -17,7 +17,14 @@ Template: astra
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.wpforms-submit-container button.wpforms-submit {
+	width: 100%;
+}
+
 /* Menu
 --------------------------------------------- */
+.site-footer h2.widget-title {
+	color: #FFFFFF;
+}
 
 /*# sourceMappingURL=style.css.map */

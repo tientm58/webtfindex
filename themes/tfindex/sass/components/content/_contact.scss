@@ -1,5 +1,32 @@
+.wpforms-container {
+  input[type="text"], input[type="email"], textarea {
+    border: 0.5px solid #BDBDBD;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: #FFFFFF;
+  }
+}
+
+.form-money {
+  position: relative;
+}
+
+.form-money:before {
+  content: 'VNĐ';
+  position: absolute;
+  z-index: 9;
+  color: #4F4F4F;
+  visibility: visible;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  right: 0;
+}
+
 .wpforms-submit-container {
   button.wpforms-submit {
     width: 100%;
+    border-radius: 10px;
   }
 }

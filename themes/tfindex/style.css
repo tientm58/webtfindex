@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: tfindex
 Theme URI: #
@@ -14,17 +15,79 @@ Template: astra
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
+/* Menu
+--------------------------------------------- */
+#ast-desktop-header .menu-item:hover .menu-link {
+	color: #f9c349;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-.wpforms-submit-container button.wpforms-submit {
-	width: 100%;
+.tfindex-text {
+	font-weight: 800;
+	font-size: 48px;
+	line-height: 64px;
+	color: #355580;
 }
 
-/* Menu
+.tfindex-text p {
+	margin-bottom: 0;
+}
+
+.wpforms-container input[type="text"], .wpforms-container input[type="email"], .wpforms-container textarea {
+	border: 0.5px solid #BDBDBD;
+	box-sizing: border-box;
+	border-radius: 10px;
+	background: #FFFFFF;
+}
+
+.form-money {
+	position: relative;
+}
+
+.form-money:before {
+	content: 'VNĐ';
+	position: absolute;
+	z-index: 9;
+	color: #4F4F4F;
+	visibility: visible;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	right: 0;
+}
+
+.wpforms-submit-container button.wpforms-submit {
+	width: 100%;
+	border-radius: 10px;
+}
+
+/* Footer
 --------------------------------------------- */
 .site-footer h2.widget-title {
 	color: #FFFFFF;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 17px;
+	line-height: 24px;
+}
+
+.site-footer .textwidget p, .site-footer .textwidget li, .site-footer .textwidget span {
+	color: #FFFFFF;
+}
+
+.site-footer .menu .menu-item .menu-link {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 24px;
+	color: #F2F2F2;
+}
+
+.site-footer .menu .menu-item .menu-link:hover {
+	color: #f9c349;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -38,7 +38,7 @@ if ( ! function_exists('testimonials_post_type') ) {
             'label'                 => __( 'Testimonial', 'tfindex' ),
             'description'           => __( 'What client say?', 'tfindex' ),
             'labels'                => $labels,
-            'supports'              => array( 'title', 'editor', 'custom-fields' ),
+            'supports'              => array( 'title', 'editor', 'custom-fields', 'thumbnail' ),
 //			'taxonomies'            => array( 'category', 'post_tag' ),
             'hierarchical'          => false,
             'public'                => true,

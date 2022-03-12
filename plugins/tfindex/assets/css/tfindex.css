@@ -1,3 +1,13 @@
+/* Button */
+.tfindex-widget .btn{
+    border-radius: 30px;
+}
+
+.tfindex-widget .btn-primary .btn-link {
+    color: #fff;
+}
+
+
 /* testimonials */
 @media (min-width: 768px) {
     .tfindex-widget .testimonials .col-md-3 {
@@ -54,6 +64,10 @@
     color: #4F4F4F;
 }
 
+.testimonials-swiper .item:hover {
+    cursor: pointer;
+}
+
 .testimonials-swiper .item.swiper-slide {
     background: #FFFFFF;
     box-shadow: 0 1px 3px rgba(53, 85, 128, 0.15);
@@ -64,15 +78,67 @@
     padding: 30px;
 }
 
+/* TFindex */
+.tfindex-widget-tfindex .row [class^="col"] {
+    margin: unset;
+}
+
+@media only screen and (min-width: 45em) {
+    .tfindex-widget-tfindex .col-10 {
+        width: calc(100% - 12.66667%);
+    }
+    .tfindex-widget-tfindex .col-6 {
+        width: 50%;
+    }
+}
+
+
+.tfindex-widget-tfindex .tfindex-swiper .item:hover {
+    cursor: pointer;
+}
+
+.tfindex-widget-tfindex .tfindex-swiper .item:hover .post-title {
+    color: #F9D361;
+}
+
+.tfindex-widget-tfindex .item.swiper-slide {
+    text-align: left;
+}
+
+.tfindex-swiper-left.swiper .swiper-slide {
+    justify-content: end;
+}
+
+.tfindex-widget-tfindex .item .post-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #BDBDBD;
+}
+
+.tfindex-widget-tfindex .swiper-slide-active .post-title {
+    color: #F5B236;
+}
+
+.tfindex-widget-tfindex .sub-header {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+}
 
 /* Slide show */
+.tfindex-widget-tfindex .tfindex-swiper.swiper {
+    max-height: 300px;
+}
+
 .swiper {
-    /*width: min-content;*/
-    height: 600px;
+    max-height: 600px;
 }
 
 .swiper .swiper-slide {
-    text-align: center;
+    /*text-align: center;*/
     font-size: 18px;
     /*background: #fff;*/
 

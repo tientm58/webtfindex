@@ -8,3 +8,6 @@ Build WordPress website for TFindex
 - Access to admin
 - Restore database using `All-in-One Migration`
 - Enjoy
+
+# Slider and carousel
+- https://codepen.io/Bolten/pen/MOYpdX

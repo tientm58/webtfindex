@@ -110,43 +110,13 @@ class TFIndex_Testimonials extends Widget_Base {
 			'testimonials',
 			[
 				'label' => __( 'Testimonials style', 'elementor-tfindex' ),
-//				'type' => Controls_Manager::TEXT,
-                'type' => Controls_Manager::SELECT,
-                'default' => 'grid',
-                'options' => [
-                        'carousel' => __( 'Carousel', 'elementor-tfindex' ),
-                        'grid' => __( 'Grid', 'elementor-tfindex' ),
-                ],
-//                'selectors' => [
-//                    '{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-//                ],
+                'type' => Controls_Manager::NUMBER,
+                'default' => 5,
 			]
 		);
 
 		$this->end_controls_section();
 
-//		$this->start_controls_section(
-//			'section_style',
-//			[
-//				'label' => __( 'Style', 'elementor-tfindex' ),
-//				'tab' => Controls_Manager::TAB_STYLE,
-//			]
-//		);
-//
-//		$this->add_control(
-//			'text_transform',
-//			[
-//				'label' => __( 'Text Transform', 'elementor-tfindex' ),
-//				'type' => Controls_Manager::SELECT,
-//				'default' => '',
-//				'options' => ['' => __( 'None', 'elementor-tfindex' )],
-//				'selectors' => [
-//					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-//				],
-//			]
-//		);
-//
-//		$this->end_controls_section();
 	}
 
 	/**
@@ -161,16 +131,15 @@ class TFIndex_Testimonials extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
+        $numberOfTestimonial = $settings['testimonials'];
+
         $arr = [];
 
-//        if ($settings['testimonials'] == 'carousel') {
-//
-//        }
         $args = array(
             'post_type' => 'testimonials',
             'post_status' => 'publish',
-            'posts_per_page' => 10,
-            'orderby' => 'title',
+            'posts_per_page' => $numberOfTestimonial,
+            'orderby' => 'date',
             'order' => 'ASC',
         );
         $loop = get_posts($args);
@@ -179,7 +148,7 @@ class TFIndex_Testimonials extends Widget_Base {
             $arr[] = array(
                 'id'       => $post->ID,
                 'post_content'   => $post ->post_content,
-                'full_name'    => get_field('full_name', $post->ID),
+                'full_name'    => $post->post_title,
                 'identity_or_position'    => get_field('identity_or_position', $post->ID),
             );
         endforeach;
@@ -188,44 +157,55 @@ class TFIndex_Testimonials extends Widget_Base {
 
         ?>
 
-        <?php if ($settings['testimonials'] == 'carousel') { ?>
-            <div class="tfindex-widget testimonials-style-1 tfindex-widget-testimonials">
-                <div class="owl-custom-nav">
-                    <div class="owl-prev">
-                        <span class="previous" aria-label="Previous"></span>
-                    </div>
-                    <div class="owl-next">
-                        <span class="next" aria-label="Next"></span>
-                    </div>
-                </div>
-                <div class="testimonials owl-carousel owl-theme">
-                    <?php foreach ( $arr as $el ): ?>
-                        <div class="item">
-                            <div class="content">
-                                <div class="client-say">
-                                    <?php echo $el['post_content']; ?>
+        <div class="tfindex-widget tfindex-widget-testimonials">
+            <div class="testimonials">
+                <div class="row">
+                    <div class="col-6 swiper testimonials-swiper">
+                        <div class="swiper-wrapper">
+                            <?php foreach ( $arr as $el ): ?>
+                                <div class="item swiper-slide">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="col-2">
+                                                <div class="avatar"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
+                                            </div>
+                                            <div class="col-10">
+                                                <div class="client client-name"><?php echo $el['full_name']; ?></div>
+                                                <div class="client client-position"><?php echo $el['identity_or_position']; ?></div>
+                                            </div>
+                                        </div>
+                                        <div class="client-say">
+                                            <?php echo $el['post_content']; ?>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="client"><?php echo $el['full_name']; ?> - <?php echo $el['identity_or_position']; ?></div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
-                    <?php endforeach; ?>
+                    </div>
+                    <div class="col-6 swiper testimonials-swiper-content">
+                        <div class="swiper-wrapper">
+                            <?php foreach ( $arr as $el ): ?>
+                                <div class="item swiper-slide">
+                                    <div class="content">
+                                        <div class="client-say">
+                                            <?php echo $el['post_content']; ?>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-2">
+                                                <div class="avatar"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
+                                            </div>
+                                            <div class="col-10">
+                                                <div class="client"><?php echo $el['full_name']; ?></div>
+                                                <div class="client"><?php echo $el['identity_or_position']; ?></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
-        <?php } else { ?>
-            <div class="tfindex-widget testimonials-style-2 tfindex-widget-testimonials">
-                <div class="testimonials row">
-                    <?php foreach ( $arr as $el ): ?>
-                        <div class="item col-md-3">
-                            <div class="content">
-                                <div class="client-say">
-                                    <?php echo $el['post_content']; ?>
-                                </div>
-                                <div class="client"><?php echo $el['full_name']; ?> - <?php echo $el['identity_or_position']; ?></div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        <?php }
-	}
+        </div>
+	<?php }
 }

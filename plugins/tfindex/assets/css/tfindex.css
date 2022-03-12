@@ -1,169 +1,93 @@
-/* Owl */
-.tfindex-widget .owl-item {
-    padding: 10px;
-}
-
-.tfindex-widget .item {
-    background: #EDEDED;
-    transition: 0.5s;
-}
-
-.tfindex-widget .item:hover {
-    background: #FFF;
-    transition: 0.5s;
-    cursor: pointer;
-    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.06));
-}
-
-.tfindex-widget .item {
-    padding-top: 50px;
-}
-
-.tfindex-widget .content {
-    position: relative;
-    padding: 36px;
-    font-family: Poppins, serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
-}
-
-.owl-custom-nav {
-    height: 50px;
-    display: inline-flex;
-    float: right;
-}
-
-.owl-custom-nav .owl-prev,
-.owl-custom-nav .owl-next {
-    width: 50px;
-}
-
-.owl-custom-nav .owl-prev:hover,
-.owl-custom-nav .owl-next:hover {
-    cursor: pointer;
-}
-
-.owl-prev .previous, .owl-next .next {
-    position: relative;
-}
-
-.owl-prev .previous:before {
-    content: "";
-    background: url(../images/arrow-left.png) no-repeat;
-    width: 48px;
-    height: 48px;
-    position: absolute;
-}
-
-.owl-carousel.owl-theme.owl-loaded {
-    clear: both;
-}
-
-.owl-next .next:after {
-    content: "";
-    background: url(../images/arrow-right.png) no-repeat;
-    width: 48px;
-    height: 48px;
-    position: absolute;
-}
-
 /* testimonials */
 @media (min-width: 768px) {
     .tfindex-widget .testimonials .col-md-3 {
-        /*flex: 0 0 25%;*/
         max-width: unset;
     }
 }
-.tfindex-widget .testimonials .content:before {
+.tfindex-widget .testimonials-swiper-content .item:before {
     content: "";
     background: url(../images/quote.png) no-repeat;
-    width: 27px;
-    height: 27px;
+    width: 42px;
+    height: 32px;
     position: absolute;
-    top: -20px;
+    top: 120px;
+    left: 0;
+}
+
+.tfindex-widget .testimonials-swiper-content .content .col-2 {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+}
+
+.tfindex-widget .testimonials .avatar img {
+    width: 56px;
+    height: auto;
 }
 
 .tfindex-widget .testimonials .client {
-    color: #000000;
     font-weight: 600;
-    font-size: 14px;
-    line-height: 21px;
-    padding: 20px 0;
-}
-
-/* Q&A */
-.tfindex-widget-qas .qas-item {
-    padding: 15px 0;
-}
-
-.tfindex-widget-qas .accordion {
-    /*background-color: #eee;*/
-    color: #444;
-    cursor: pointer;
-    /*padding: 18px;*/
-    width: 100%;
-    border: none;
     text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-    display: flex;
 }
 
-.tfindex-widget-qas .question,
-.tfindex-widget-qas .answer {
+.tfindex-widget .testimonials .client-name {
+    padding: 5px 0;
     font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 17px;
+    line-height: 24px;
+    color: #4F4F4F;
 }
 
-.tfindex-widget-qas .active,
-.tfindex-widget-qas .accordion:hover {
-    /*background-color: #ccc;*/
-    color: #D22727;
+.tfindex-widget .testimonials .client-position {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
 }
 
-.tfindex-widget-qas .panel {
+.tfindex-widget .testimonials .client-say {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    text-align: justify;
+    color: #4F4F4F;
+}
+
+.testimonials-swiper .item.swiper-slide {
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(53, 85, 128, 0.15);
+    border-radius: 15px;
+}
+
+.testimonials-swiper .item .content {
+    padding: 30px;
+}
+
+
+/* Slide show */
+.swiper {
+    /*width: min-content;*/
+    height: 600px;
+}
+
+.swiper .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /*background: #fff;*/
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    /*padding: 0 18px;*/
-    /*background-color: white;*/
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    margin-top: 15px;
-}
-
-.question-icon {
-    font-weight: 500;
-    font-size: 19px;
-    line-height: 28px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
     align-items: center;
-    padding: 10px 20px;
-    background: #D22727;
-    width: fit-content;
-    height: 50px;
-    font-family: Poppins, serif;
-    color: #fff;
-    margin-right: 20px;
-    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.06));
 }
-
-.answer-icon {
-    font-weight: 500;
-    font-size: 19px;
-    line-height: 28px;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    background: #fff;
-    width: fit-content;
-    height: 50px;
-    font-family: Poppins, serif;
-    color: #666666;
-    margin-right: 20px;
-    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.06));
-}
+/*   --------------    */

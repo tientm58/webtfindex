@@ -49,12 +49,15 @@ class Plugin {
 	 */
 	public function widget_scripts() {
 
-        wp_enqueue_style( 'owl-style-lib', plugins_url( '/assets/js/owl/assets/owl.carousel.min.css', __FILE__ ));
-        wp_enqueue_style( 'owl-style-theme', plugins_url( '/assets/js/owl/assets/owl.theme.default.min.css', __FILE__ ));
+//        wp_enqueue_style( 'owl-style-lib', plugins_url( '/assets/js/owl/assets/owl.carousel.min.css', __FILE__ ));
+//        wp_enqueue_style( 'owl-style-theme', plugins_url( '/assets/js/owl/assets/owl.theme.default.min.css', __FILE__ ));
+
+        wp_enqueue_style( 'swiper-style', plugins_url( '/assets/js/swiper/swiper-bundle.min.css', __FILE__ ));
 
         wp_enqueue_style( 'tfindex-style-plugin', plugins_url( '/assets/css/tfindex.css', __FILE__ ));
 
-        wp_enqueue_script('owl-js-lib', plugins_url( '/assets/js/owl/owl.carousel.min.js', __FILE__ ), [ 'jquery' ], false, true);
+//        wp_enqueue_script('owl-js-lib', plugins_url( '/assets/js/owl/owl.carousel.min.js', __FILE__ ), [ 'jquery' ], false, true);
+        wp_enqueue_script('swiper-js', plugins_url( '/assets/js/swiper/swiper-bundle.min.js', __FILE__ ), [ 'jquery' ], false, true);
 
         wp_register_script( 'elementor-tfindex', plugins_url( '/assets/js/tfindex.js', __FILE__ ), [ 'jquery' ], false, true );
     }
@@ -62,7 +65,7 @@ class Plugin {
 	/**
 	 * Editor scripts
 	 *
-	 * Enqueue plugin javascripts integrations for Elementor editor.
+	 * Enqueue plugin javascript integrations for Elementor editor.
 	 *
 	 * @since 1.2.1
 	 * @access public
@@ -99,6 +102,43 @@ class Plugin {
 		return $tag;
 	}
 
+    /**
+     * Testimonials scripts
+     *
+     * Enqueue plugin javascript integrations for Elementor editor.
+     *
+     * @since 1.0.0
+     * @access public
+     */
+    public function testimonials_scripts() {
+        add_filter( 'script_loader_tag', [ $this, 'testimonials_scripts_as_a_module' ], 10, 2 );
+
+        wp_enqueue_script(
+            'tfindex-testimonials-handle',
+            plugins_url( '/assets/js/testimonials/testimonials.js', __FILE__ ),
+            false,
+            '1.0.0',
+            true
+        );
+    }
+
+    /**
+     * Force load editor script as a module
+     *
+     * @since 1.0.0
+     *
+     * @param string $tag
+     * @param string $handle
+     *
+     * @return string
+     */
+    public function testimonials_scripts_as_a_module( $tag, $handle ) {
+        if ( 'elementor-tfindex-editor' === $handle ) {
+            $tag = str_replace( '<script', '<script type="module"', $tag );
+        }
+        return $tag;
+    }
+
 	/**
 	 * Include Widgets files
 	 *
@@ -126,9 +166,9 @@ class Plugin {
 		$this->include_widgets_files();
 
 		// Register Widgets
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\TFIndex_Testimonials() );
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\TFIndex_QAs() );
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\TFIndex_Text() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_Testimonials() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_QAs() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_Text() );
 	}
 
 	/**
@@ -162,7 +202,9 @@ class Plugin {
 
 		// Register editor scripts
 		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'editor_scripts' ] );
-		
+
+		add_action( 'elementor/frontend/after_enqueue_scripts', [ $this, 'testimonials_scripts' ] );
+
 		$this->add_page_settings_controls();
 	}
 }

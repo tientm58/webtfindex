@@ -43,6 +43,30 @@
 		});
 	};
 
+	let WidgetTFTalkHandler = function( $scope, $ ) {
+		let tftalkSwiper = new Swiper('.tftalk-swiper', {
+			slidesPerView: 3,
+			spaceBetween: 30,
+			direction: getDirection(),
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			on: {
+				resize: function () {
+					tftalkSwiper.changeDirection(getDirection());
+				},
+			},
+		});
+
+		function getDirection() {
+			let windowWidth = window.innerWidth;
+			let direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+
+			return direction;
+		}
+	};
+
 	let WidgetTestimonialsHandler = function( $scope, $ ) {
 		let numOfSlides = 1;
 		let slidesPerView = 2;
@@ -85,6 +109,7 @@
 	// Make sure you run this code under Elementor.
 	$( window ).on( 'elementor/frontend/init', function() {
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/tfindex.default', WidgetTFindexHandler );
+		elementorFrontend.hooks.addAction( 'frontend/element_ready/tftalk.default', WidgetTFTalkHandler );
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/testimonials.default', WidgetTestimonialsHandler );
 	} );
 

@@ -128,13 +128,46 @@
     line-height: 48px;
 }
 
+/* TFTalk */
+.tftalk-widget .swiper.tftalk-swiper {
+    max-height: 800px;
+}
+
+.tftalk-widget .tftalk-swiper .content-block {
+    padding: 15px;
+}
+
+.tftalk-widget .tftalk-swiper .item {
+    background: #FFFFFF;
+    /* Homepage/Drop Sản phẩm */
+    box-shadow: 0 2px 3px rgba(53, 85, 128, 0.15);
+    border-radius: 15px;
+    padding-bottom: 15px;
+}
+
+.tftalk-widget  .tftalk-swiper .item:hover {
+    cursor: pointer;
+}
+
+.tftalk-widget .content-block .title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #355580;
+}
+
+.tftalk-widget .content-block .border-bottom {
+    border-bottom: 1px solid #BDBDBD;
+}
+
+.tftalk-widget .description-content ul {
+    margin-left: 30px;
+}
+
 /* Slide show */
 .tfindex-widget-tfindex .tfindex-swiper.swiper {
     max-height: 300px;
-}
-
-.tftalk-widget .tftalk-swiper.swiper {
-    max-height: 700px;
 }
 
 .swiper {

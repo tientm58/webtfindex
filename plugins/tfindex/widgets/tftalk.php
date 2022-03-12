@@ -171,44 +171,46 @@ class TFIndex_TFTalk extends Widget_Base {
                                 <div class="item swiper-slide">
                                     <div class="content">
                                         <div class="avatar"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
-                                        <div class="title"><?php echo $el['post_name']; ?></div>
-                                        <div class="author">
-                                            <div class="row">
-                                                <div class="col-3">
-                                                    <div class="author-avatar"><img src="<?php echo $el['avatar']; ?>" alt="<?php echo $el['author']; ?>"></div>
-                                                </div>
-                                                <div class="col-9">
-                                                    <div class="author-text">Diễn giả</div>
-                                                    <div class="author"><?php echo $el['author']; ?></div>
+                                        <div class="content-block">
+                                            <div class="title"><?php echo $el['post_name']; ?></div>
+                                            <div class="author">
+                                                <div class="row border-bottom">
+                                                    <div class="col-3">
+                                                        <div class="author-avatar"><img src="<?php echo $el['avatar']; ?>" alt="<?php echo $el['author']; ?>"></div>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        <div class="author-text">Diễn giả</div>
+                                                        <div class="author"><?php echo $el['author']; ?></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <div class="course-info">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <div class="time"></div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="type"></div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="fee-text">Học phí</div>
-                                                    <div class="fee"><?php echo $el['fee']; ?></div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="fee-text">Số lượng học viên</div>
-                                                    <div class="fee"><?php echo $el['students']; ?></div>
+                                            <div class="course-info">
+                                                <div class="row">
+                                                    <div class="col-5">
+                                                        <div class="time"></div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="type"></div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="fee-text">Học phí</div>
+                                                        <div class="fee"><?php echo $el['fee']; ?></div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="fee-text">Số lượng học viên</div>
+                                                        <div class="fee"><?php echo $el['students']; ?></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="description">
-                                            <div class="content-title">Nội dung</div>
-                                            <div class="content">
-                                                <?php echo $el['content']; ?>
+                                            <div class="description">
+                                                <div class="description-title">Nội dung</div>
+                                                <div class="description-content">
+                                                    <?php echo $el['content']; ?>
+                                                </div>
                                             </div>
+                                            <div class="view-more"><button class="btn btn-primary"><a class="btn-link" href="">Đăng ký</a></button></div>
                                         </div>
-                                        <div class="view-more"><button class="btn btn-primary"><a class="btn-link" href="">Đăng ký</a></button></div>
                                     </div>
                                 </div>
                             <?php endforeach; ?>

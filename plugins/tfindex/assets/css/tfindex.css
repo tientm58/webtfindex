@@ -159,13 +159,50 @@
 
 .tftalk-widget .content-block .border-bottom {
     border-bottom: 1px solid #BDBDBD;
+    padding: 15px 0;
 }
 
 .tftalk-widget .description-content ul {
     margin-left: 30px;
 }
 
-/* Slide show */
+.tftalk-widget .course-info {
+    padding: 15px 0;
+}
+
+.tftalk-widget .view-more .btn {
+    width: 100%;
+}
+
+.tftalk-widget .time-text,
+.tftalk-widget .type-text,
+.tftalk-widget .fee-text,
+.tftalk-widget .students-text,
+.tftalk-widget .description-title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4F4F4F;
+}
+
+.tftalk-widget .time,
+.tftalk-widget .type,
+.tftalk-widget .fee,
+.tftalk-widget .students,
+.tftalk-widget .description-content {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #4F4F4F;
+}
+
+.tftalk-widget .description {
+    margin-left: 10px;
+}
+
+    /* Slide show */
 .tfindex-widget-tfindex .tfindex-swiper.swiper {
     max-height: 300px;
 }

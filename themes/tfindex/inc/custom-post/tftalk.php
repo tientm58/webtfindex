@@ -8,7 +8,7 @@ if ( ! function_exists('tftalks_post_type') ) {
         $labels = array(
             'name'                  => _x( 'TFTalk', 'Post Type General Name', 'tfindex' ),
             'singular_name'         => _x( 'TFTalk', 'Post Type Singular Name', 'tfindex' ),
-            'menu_name'             => __( 'TFTalk', 'tfindex' ),
+            'menu_name'             => __( 'TFindex TFTalk', 'tfindex' ),
             'name_admin_bar'        => __( 'TFTalk', 'tfindex' ),
             'archives'              => __( 'Item Archives', 'tfindex' ),
             'attributes'            => __( 'Item Attributes', 'tfindex' ),

@@ -1,15 +1,15 @@
 <?php
 
-if ( ! function_exists('testimonials_post_type') ) {
+if ( ! function_exists('charts_post_type') ) {
 
 // Register Custom Post Type
-    function testimonials_post_type() {
+    function charts_post_type() {
 
         $labels = array(
-            'name'                  => _x( 'Testimonials', 'Post Type General Name', 'tfindex' ),
-            'singular_name'         => _x( 'Testimonial', 'Post Type Singular Name', 'tfindex' ),
-            'menu_name'             => __( 'TFindex Testimonials', 'tfindex' ),
-            'name_admin_bar'        => __( 'Testimonials', 'tfindex' ),
+            'name'                  => _x( 'Chart', 'Post Type General Name', 'tfindex' ),
+            'singular_name'         => _x( 'Chart', 'Post Type Singular Name', 'tfindex' ),
+            'menu_name'             => __( 'TFindex Chart', 'tfindex' ),
+            'name_admin_bar'        => __( 'Chart', 'tfindex' ),
             'archives'              => __( 'Item Archives', 'tfindex' ),
             'attributes'            => __( 'Item Attributes', 'tfindex' ),
             'parent_item_colon'     => __( 'Parent Item:', 'tfindex' ),
@@ -35,7 +35,7 @@ if ( ! function_exists('testimonials_post_type') ) {
             'filter_items_list'     => __( 'Filter items list', 'tfindex' ),
         );
         $args = array(
-            'label'                 => __( 'Testimonial', 'tfindex' ),
+            'label'                 => __( 'Chart', 'tfindex' ),
             'description'           => __( 'What client say?', 'tfindex' ),
             'labels'                => $labels,
             'supports'              => array( 'title', 'editor', 'custom-fields', 'thumbnail' ),
@@ -44,20 +44,20 @@ if ( ! function_exists('testimonials_post_type') ) {
             'public'                => true,
             'show_ui'               => true,
             'show_in_menu'          => true,
-            'menu_position'         => 8,
-            'menu_icon'             => 'dashicons-format-quote',
+            'menu_position'         => 7,
+            'menu_icon'             => 'dashicons-chart-area',
             'show_in_admin_bar'     => true,
             'show_in_nav_menus'     => true,
             'can_export'            => true,
-            'has_archive'           => false,
+            'has_archive'           => true,
             'exclude_from_search'   => false,
             'publicly_queryable'    => true,
-            'rewrite'               => false,
+            'rewrite'               => true,
             'capability_type'       => 'page',
         );
-        register_post_type( 'testimonials', $args );
+        register_post_type( 'chart', $args );
 
     }
-    add_action( 'init', 'testimonials_post_type', 0 );
+    add_action( 'init', 'charts_post_type', 0 );
 
 }

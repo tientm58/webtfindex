@@ -173,8 +173,8 @@ class TFIndex_TFTalk extends Widget_Base {
                                         <div class="avatar"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
                                         <div class="content-block">
                                             <div class="title"><?php echo $el['post_name']; ?></div>
-                                            <div class="author">
-                                                <div class="row border-bottom">
+                                            <div class="author border-bottom">
+                                                <div class="row">
                                                     <div class="col-3">
                                                         <div class="author-avatar"><img src="<?php echo $el['avatar']; ?>" alt="<?php echo $el['author']; ?>"></div>
                                                     </div>
@@ -187,15 +187,17 @@ class TFIndex_TFTalk extends Widget_Base {
 
                                             <div class="course-info">
                                                 <div class="row">
-                                                    <div class="col-5">
-                                                        <div class="time"></div>
+                                                    <div class="col-6">
+                                                        <div class="time-text">Thời gian</div>
+                                                        <div class="time"><?php echo $el['time']; ?></div>
                                                     </div>
-                                                    <div class="col-7">
-                                                        <div class="type"></div>
+                                                    <div class="col-6">
+                                                        <div class="type-text">Hình thức</div>
+                                                        <div class="type"><?php echo $el['type']; ?></div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="fee-text">Học phí</div>
-                                                        <div class="fee"><?php echo $el['fee']; ?></div>
+                                                        <div class="fee"><?php echo number_format( $el['fee'], absint( 0 ), null, '.' ) ?> vnđ</div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="fee-text">Số lượng học viên</div>

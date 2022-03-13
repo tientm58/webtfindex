@@ -202,7 +202,50 @@
     margin-left: 10px;
 }
 
-    /* Slide show */
+/* Chart */
+
+.tfindex-widget .chart-swiper .row [class^="col"] {
+    margin: unset;
+}
+
+.tfindex-widget .swiper.chart-swiper-thumb {
+    max-width: 28%;
+    position: absolute;
+    bottom: 30px;
+}
+
+.tfindex-widget .chart-swiper .chart-image {
+    padding-left: 30px;
+}
+
+.tfindex-widget .chart-swiper .description {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #4F4F4F;
+}
+
+.tfindex-widget .chart-swiper .chart-image img {
+    padding: 10px;
+    background: #FFFFFF;
+    box-shadow: -24px 14px 45px rgba(0, 0, 0, 0.13);
+    border-radius: 20px;
+}
+
+.tfindex-widget .chart-swiper-thumb.swiper-grid-column>.swiper-wrapper {
+    flex-direction: row;
+    align-items: baseline;
+    border-top: 1px solid #E0E0E0;
+}
+
+.tfindex-widget .chart-swiper-thumb .item {
+    background: #FAFAFA;
+    border: 1px solid #F5B236;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+/* Slide show */
 .tfindex-widget-tfindex .tfindex-swiper.swiper {
     max-height: 300px;
 }

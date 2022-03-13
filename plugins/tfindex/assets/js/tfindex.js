@@ -67,6 +67,50 @@
 		}
 	};
 
+	let WidgetChartHandler = function( $scope, $ ) {
+		let chartNumOfSlides = 1;
+		let chartSlidesPerView = 3;
+		let chartSwiperThumb = new Swiper(".chart-swiper-thumb", {
+			loop: false,
+			spaceBetween: 30,
+			allowTouchMove: false,
+			slidesPerView: 3,
+			grid: {
+				rows: 2
+			},
+			// autoplay: true,
+			// navigation: {
+			// 	nextEl: ".swiper-button-next",
+			// 	prevEl: ".swiper-button-prev",
+			// },
+			on: {
+				beforeInit: function () {
+					chartNumOfSlides = this.wrapperEl.querySelectorAll(".swiper-slide").length;
+				}
+			}
+		});
+
+		chartSwiperThumb.on('click', function (e) {
+			e.preventDefault();
+			let nexSlide = (e.clickedIndex + 1) % chartNumOfSlides;
+			chartSwiper.slideTo(nexSlide, 1000);
+		},true);
+
+		let chartSwiper = new Swiper(".chart-swiper", {
+			loop: true,
+			spaceBetween: 30,
+			slidesPerView: 1,
+			freeMode: false,
+			watchSlidesProgress: false,
+			direction: "vertical",
+			paginationClickable: false,
+			allowTouchMove: false,
+			thumbs: {
+				swiper: chartSwiperThumb,
+			},
+		});
+	};
+
 	let WidgetTestimonialsHandler = function( $scope, $ ) {
 		let numOfSlides = 1;
 		let slidesPerView = 2;
@@ -110,6 +154,7 @@
 	$( window ).on( 'elementor/frontend/init', function() {
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/tfindex.default', WidgetTFindexHandler );
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/tftalk.default', WidgetTFTalkHandler );
+		elementorFrontend.hooks.addAction( 'frontend/element_ready/chart.default', WidgetChartHandler );
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/testimonials.default', WidgetTestimonialsHandler );
 	} );
 

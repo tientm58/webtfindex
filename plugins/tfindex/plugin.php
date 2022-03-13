@@ -150,6 +150,7 @@ class Plugin {
 	private function include_widgets_files() {
 		require_once(__DIR__ . '/widgets/tfindex.php');
 		require_once(__DIR__ . '/widgets/tftalk.php');
+		require_once(__DIR__ . '/widgets/chart.php');
 		require_once(__DIR__ . '/widgets/testimonials.php');
 		require_once(__DIR__ . '/widgets/QAs.php');
 		require_once(__DIR__ . '/widgets/text.php');
@@ -170,6 +171,7 @@ class Plugin {
 		// Register Widgets
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_TFindex() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_TFTalk() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_Chart() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_Testimonials() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_QAs() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_Text() );
@@ -207,7 +209,7 @@ class Plugin {
 		// Register editor scripts
 		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'editor_scripts' ] );
 
-		add_action( 'elementor/frontend/after_enqueue_scripts', [ $this, 'testimonials_scripts' ] );
+//		add_action( 'elementor/frontend/after_enqueue_scripts', [ $this, 'testimonials_scripts' ] );
 
 		$this->add_page_settings_controls();
 	}

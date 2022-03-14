@@ -171,14 +171,14 @@ class TFIndex_TFTalk extends Widget_Base {
                                 <div class="item swiper-slide">
                                     <div class="content">
                                         <div class="avatar"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
-                                        <div class="content-block">
+                                        <div class="content-block ast-container">
                                             <div class="title"><?php echo $el['post_name']; ?></div>
                                             <div class="author border-bottom">
-                                                <div class="row">
-                                                    <div class="col-3">
+                                                <div class="ast-row">
+                                                    <div class="ast-col-xs-3">
                                                         <div class="author-avatar"><img src="<?php echo $el['avatar']; ?>" alt="<?php echo $el['author']; ?>"></div>
                                                     </div>
-                                                    <div class="col-9">
+                                                    <div class="ast-col-xs-9">
                                                         <div class="author-text">Diễn giả</div>
                                                         <div class="author"><?php echo $el['author']; ?></div>
                                                     </div>
@@ -186,20 +186,20 @@ class TFIndex_TFTalk extends Widget_Base {
                                             </div>
 
                                             <div class="course-info">
-                                                <div class="row">
-                                                    <div class="col-6">
+                                                <div class="ast-row">
+                                                    <div class="ast-col-xs-6">
                                                         <div class="time-text">Thời gian</div>
                                                         <div class="time"><?php echo $el['time']; ?></div>
                                                     </div>
-                                                    <div class="col-6">
+                                                    <div class="ast-col-xs-6">
                                                         <div class="type-text">Hình thức</div>
                                                         <div class="type"><?php echo $el['type']; ?></div>
                                                     </div>
-                                                    <div class="col-6">
+                                                    <div class="ast-col-xs-6">
                                                         <div class="fee-text">Học phí</div>
                                                         <div class="fee"><?php echo number_format( $el['fee'], absint( 0 ), null, '.' ) ?> vnđ</div>
                                                     </div>
-                                                    <div class="col-6">
+                                                    <div class="ast-col-xs-6">
                                                         <div class="fee-text">Số lượng học viên</div>
                                                         <div class="fee"><?php echo $el['students']; ?></div>
                                                     </div>

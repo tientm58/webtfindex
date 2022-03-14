@@ -10,17 +10,29 @@
 		let tfindexThumbs = new Swiper(".tfindex-swiper", {
 			loop: true,
 			spaceBetween: 30,
-			slidesPerView: tfindexSlidesPerView,
-			freeMode: false,
+			// slidesPerView: tfindexSlidesPerView,
+			slidesPerView: 3,
+			freeMode: true,
 			watchSlidesProgress: false,
-			direction: "vertical",
+			// direction: "vertical",
+			direction: getDirection(),
 			paginationClickable: false,
-			allowTouchMove: false,
+			allowTouchMove: true,
+			breakpoints: {
+				720: {
+					slidesPerView: 4,
+					allowTouchMove: false,
+					freeMode: false,
+				}
+			},
 			on: {
 				beforeInit: function () {
 					tfindexNumOfSlides = this.wrapperEl.querySelectorAll(".swiper-slide").length;
-				}
-			}
+				},
+				resize: function () {
+					tfindexThumbs.changeDirection(getDirection());
+				},
+			},
 		});
 		// tfindexThumbs.on('click', function (e) {
 		// 	let nexSlide = (e.clickedIndex + 1) % tfindexNumOfSlides;
@@ -41,21 +53,37 @@
 				swiper: tfindexThumbs,
 			},
 		});
+
+		function getDirection() {
+			let windowWidth = window.innerWidth;
+			let direction = window.innerWidth > 760 ? 'vertical' : 'horizontal';
+
+			return direction;
+		}
 	};
 
 	let WidgetTFTalkHandler = function( $scope, $ ) {
 		let tftalkSwiper = new Swiper('.tftalk-swiper', {
-			slidesPerView: 3,
+			slidesPerView: 1,
 			spaceBetween: 30,
-			direction: getDirection(),
+			// direction: getDirection(),
 			navigation: {
 				nextEl: '.swiper-button-next',
 				prevEl: '.swiper-button-prev',
 			},
-			on: {
-				resize: function () {
-					tftalkSwiper.changeDirection(getDirection());
+			breakpoints: {
+				730: {
+					slidesPerView: 2,
 				},
+				1024: {
+					slidesPerView: 3,
+					spaceBetween: 30,
+				},
+			},
+			on: {
+				// resize: function () {
+				// 	tftalkSwiper.changeDirection(getDirection());
+				// },
 			},
 		});
 

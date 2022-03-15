@@ -177,6 +177,40 @@
 			},
 		});
 	};
+
+	let WidgetCommitmentsHandler = function( $scope, $ ) {
+		let numOfSlides = 1;
+		let slidesPerView = 4;
+		let swiperThumbs = new Swiper(".commitment-swiper-thumb", {
+			loop: false,
+			spaceBetween: 30,
+			slidesPerView: 4,
+			freeMode: false,
+			watchSlidesProgress: false,
+			direction: "vertical",
+			paginationClickable: false,
+			allowTouchMove: false,
+			on: {
+				beforeInit: function () {
+					numOfSlides = this.wrapperEl.querySelectorAll(".swiper-slide").length;
+				}
+			}
+		});
+		swiperThumbs.on('click', function (e) {
+			let nexSlide = (e.clickedIndex + 1) % numOfSlides;
+			swiperThumbs.slideTo(nexSlide, 1000);
+		},true);
+
+		new Swiper(".commitment-swiper-content", {
+			loop: true,
+			spaceBetween: 10,
+			direction: "vertical",
+			allowTouchMove: false,
+			thumbs: {
+				swiper: swiperThumbs,
+			},
+		});
+	};
 	
 	// Make sure you run this code under Elementor.
 	$( window ).on( 'elementor/frontend/init', function() {
@@ -184,6 +218,7 @@
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/tftalk.default', WidgetTFTalkHandler );
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/chart.default', WidgetChartHandler );
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/testimonials.default', WidgetTestimonialsHandler );
+		elementorFrontend.hooks.addAction( 'frontend/element_ready/commitment.default', WidgetCommitmentsHandler );
 	} );
 
 } )( jQuery );

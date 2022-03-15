@@ -251,7 +251,35 @@
     border-radius: 5px;
 }
 
-/* Slide show */
+/* Commitments */
+.tfindex-widget .swiper.commitment-swiper-thumb {
+    max-height: 200px;
+}
+
+.tfindex-widget .swiper.commitment-swiper-thumb .item {
+    justify-content: left;
+    color: #fff;
+    font-size: 17px;
+}
+
+.tfindex-widget .swiper.commitment-swiper-content {
+    max-height: 300px;
+}
+
+.tfindex-widget .swiper.commitment-swiper-content .item .content {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #4F4F4F;
+
+    padding: 30px;
+    background: #F2F2F2;
+    box-shadow: 0 2px 40px rgba(245, 179, 54, 0.15);
+    backdrop-filter: blur(4px);
+    border-radius: 15px;
+}
+
+    /* Slide show */
 .tfindex-widget-tfindex .tfindex-swiper.swiper {
     max-height: 300px;
 }

@@ -279,6 +279,42 @@
     border-radius: 15px;
 }
 
+/* Staff */
+.tfindex-widget .staff-swiper .avatar {
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.tfindex-widget .staff-swiper img {
+    transition: transform .75s ease;
+}
+
+.tfindex-widget .staff-swiper .avatar:hover img {
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.tfindex-widget .staff-swiper .name {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    color: #333333;
+    padding: 15px 0 0 0;
+}
+
+.tfindex-widget .staff-swiper .position {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #828282;
+}
+
+.tfindex-widget .staff-swiper .text {
+    display: none;
+}
+
     /* Slide show */
 .tfindex-widget-tfindex .tfindex-swiper.swiper {
     max-height: 300px;
@@ -308,3 +344,118 @@
     align-items: center;
 }
 /*   --------------    */
+
+/* Modal */
+
+/* Modal Content */
+/* The Modal (background) */
+.tfindex-widget .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 99; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.tfindex-widget .modal-content {
+    border-radius: 15px;
+    position: relative;
+    /*background-color: #fefefe;*/
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    max-width: 628px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    background: url("../images/bg-staff.png");
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.tfindex-widget .close {
+    color: #828282;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 30px;
+    top: 8px;
+}
+
+.tfindex-widget .close:hover,
+.tfindex-widget .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tfindex-widget .modal-header {
+    color: #828282;
+}
+
+.tfindex-widget .modal-body {
+    padding: 2px 16px;
+}
+
+.tfindex-widget .modal-content .avatar {
+    text-align: center;
+    padding-top: 90px;
+}
+
+.tfindex-widget .modal-content .avatar img {
+    border-radius: 100%;
+    width: 225px;
+    height: 225px;
+    object-fit: cover;
+    background: #355580;
+    border: solid 4px #fff;
+    padding: 4px;
+}
+
+.tfindex-widget .modal-content .name {
+    text-align: center;
+    color: #355580;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    padding-top: 40px;
+}
+
+.tfindex-widget .modal-content .position {
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    color: #4F4F4F;
+}
+
+.tfindex-widget .modal-content .text {
+    padding: 15px 45px 45px 30px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    color: #4F4F4F;
+}

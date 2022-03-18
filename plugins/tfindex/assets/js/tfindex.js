@@ -178,6 +178,44 @@
 		});
 	};
 
+	let WidgetStaffHandler = function( $scope, $ ) {
+		let modal = $("#staff-popup-template");
+		let closeBtn = $(".close")[0];
+		let resultArray = [];
+
+		let staffSwiper = new Swiper(".swiper.staff-swiper", {
+			loop: true,
+			slidesPerView: 1,
+			spaceBetween: 30,
+			breakpoints: {
+				730: {
+					slidesPerView: 2,
+				},
+				1024: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+		});
+
+		// When the user clicks anywhere outside of the modal, close it
+		// window.onclick = function(event) {
+		// 	if (event.target == modal) {
+		// 		modal.style.display = "none";
+		// 	}
+		// }
+
+		closeBtn.onclick = function() {
+			modal.hide();
+		}
+
+		staffSwiper.on('click', function (e) {
+			modal.show();
+			$('#staff-popup-template .modal-body').replaceWith($(e.clickedSlide).find('.content').clone());
+		},true);
+
+	};
+
 	let WidgetCommitmentsHandler = function( $scope, $ ) {
 		let numOfSlides = 1;
 		let slidesPerView = 4;
@@ -218,6 +256,7 @@
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/tftalk.default', WidgetTFTalkHandler );
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/chart.default', WidgetChartHandler );
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/testimonials.default', WidgetTestimonialsHandler );
+		elementorFrontend.hooks.addAction( 'frontend/element_ready/staff.default', WidgetStaffHandler );
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/commitment.default', WidgetCommitmentsHandler );
 	} );
 

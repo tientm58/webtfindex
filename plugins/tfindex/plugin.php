@@ -152,6 +152,7 @@ class Plugin {
 		require_once(__DIR__ . '/widgets/tftalk.php');
 		require_once(__DIR__ . '/widgets/chart.php');
 		require_once(__DIR__ . '/widgets/testimonials.php');
+		require_once(__DIR__ . '/widgets/staff.php');
 		require_once(__DIR__ . '/widgets/commitment.php');
 		require_once(__DIR__ . '/widgets/QAs.php');
 		require_once(__DIR__ . '/widgets/text.php');
@@ -174,6 +175,7 @@ class Plugin {
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_TFTalk() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_Chart() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_Testimonials() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_Staff() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_Commitment() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_QAs() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TFIndex_Text() );

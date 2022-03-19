@@ -185,7 +185,14 @@ h3.tfindex-text {
 	margin-bottom: 0;
 }
 
-.wpforms-container input[type="text"], .wpforms-container input[type="email"], .wpforms-container textarea {
+@media screen and (max-width: 412px) {
+	.tfindex-text {
+		font-size: 32px;
+		line-height: 56px;
+	}
+}
+
+.wpforms-container input[type="text"], .wpforms-container input[type="email"], .wpforms-container textarea, .wpforms-container select {
 	border: 0.5px solid #BDBDBD;
 	box-sizing: border-box;
 	border-radius: 10px;
@@ -212,6 +219,11 @@ h3.tfindex-text {
 .wpforms-submit-container button.wpforms-submit {
 	width: 100%;
 	border-radius: 10px;
+}
+
+.wpforms-container textarea {
+	resize: vertical !important;
+	display: none;
 }
 
 /* Footer

@@ -158,30 +158,28 @@ class TFIndex_Chart extends Widget_Base {
         ?>
 
         <div class="tfindex-widget tfindex-widget-chart">
-            <div class="chart">
-                <div class="row">
-                    <div class="swiper chart-swiper">
-                        <div class="swiper-wrapper">
-                            <?php foreach ( $arr as $el ): ?>
-                                <div class="item swiper-slide">
-                                    <div class="content">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="title">
-                                                    <h3 class="tfindex-text"><?php echo $el['post_title']; ?></h3>
-                                                </div>
-                                                <div class="description">
-                                                    <?php echo $el['post_content']; ?>
-                                                </div>
+            <div class="chart ast-container">
+                <div class="swiper chart-swiper">
+                    <div class="swiper-wrapper">
+                        <?php foreach ( $arr as $el ): ?>
+                            <div class="item swiper-slide">
+                                <div class="content">
+                                    <div class="ast-row">
+                                        <div class="ast-col-md-4">
+                                            <div class="title">
+                                                <h3 class="tfindex-text"><?php echo $el['post_title']; ?></h3>
                                             </div>
-                                            <div class="col-8">
-                                                <div class="chart chart-image"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
+                                            <div class="description">
+                                                <?php echo $el['post_content']; ?>
                                             </div>
+                                        </div>
+                                        <div class="ast-col-md-8">
+                                            <div class="chart chart-image"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
                                         </div>
                                     </div>
                                 </div>
-                            <?php endforeach; ?>
-                        </div>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
                 <div class="swiper chart-swiper-thumb">

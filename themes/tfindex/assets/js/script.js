@@ -6,6 +6,8 @@ jQuery( document ).ready( function( $ ) {
 	$( function() {
 		const $form = $( '.wpforms-form' );
 		const $input = $form.find( '.form-money input' );
+		const $textarea = $form.find( 'textarea' );
+		const $select = $form.find( '.wpforms-field-select select' );
 
 		$input.on( 'keyup', function( event ) {
 			// When user select text in the document, also abort.
@@ -30,6 +32,14 @@ jQuery( document ).ready( function( $ ) {
 			$this.val( function() {
 				return ( input === 0 ) ? '' : input.toLocaleString();
 			} );
+		} );
+
+		$select.change( function( event ) {
+			if ( $( this ).val() === 'Khác' ) {
+				$textarea.show( 50 );
+			} else {
+				$textarea.hide( 50 );
+			}
 		} );
 	} );
 } );

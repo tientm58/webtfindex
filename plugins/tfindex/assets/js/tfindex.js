@@ -157,12 +157,20 @@
 		let swiperThumbs = new Swiper(".testimonials-swiper", {
 			loop: true,
 			spaceBetween: 30,
-			slidesPerView: slidesPerView,
-			freeMode: false,
+			slidesPerView: 1,
+			// freeMode: true,
 			watchSlidesProgress: false,
-			direction: "vertical",
+			// direction: "vertical",
 			paginationClickable: false,
-			allowTouchMove: false,
+			// allowTouchMove: false,
+			allowTouchMove: true,
+			breakpoints: {
+				730: {
+					slidesPerView: slidesPerView,
+					allowTouchMove: false,
+					direction: "vertical",
+				}
+			},
 			on: {
 				beforeInit: function () {
 					numOfSlides = this.wrapperEl.querySelectorAll(".swiper-slide").length;
@@ -178,7 +186,20 @@
 			loop: true,
 			spaceBetween: 10,
 			direction: "vertical",
-			allowTouchMove: false,
+			// allowTouchMove: true,
+			// breakpoints: {
+			// 	730: {
+			// 		// slidesPerView: 2,
+			// 		allowTouchMove: false,
+			// 		direction: "vertical",
+			// 	},
+			// 	1024: {
+			// 		// slidesPerView: 3,
+			// 		// spaceBetween: 30,
+			// 		allowTouchMove: false,
+			// 		direction: "vertical",
+			// 	},
+			// },
 			// autoplay: true,
 			// navigation: {
 			// 	nextEl: ".swiper-button-next",

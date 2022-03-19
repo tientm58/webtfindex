@@ -72,8 +72,18 @@
     background: #FFFFFF;
     box-shadow: 0 1px 3px rgba(53, 85, 128, 0.15);
     border-radius: 15px;
-    margin: 30px;
+    margin: 30px 30px 30px 0;
     padding: 30px;
+}
+
+@media screen and (max-width: 412px) {
+    .testimonials-swiper .item.swiper-slide .content {
+        margin: unset;
+    }
+
+    .testimonials-swiper-content {
+        display: none;
+    }
 }
 
 /*.testimonials-swiper .item .content {*/
@@ -313,12 +323,6 @@
     margin: unset;
 }
 
-.tfindex-widget .swiper.chart-swiper-thumb {
-    max-width: 28%;
-    position: absolute;
-    bottom: 30px;
-}
-
 .tfindex-widget .chart-swiper .chart-image {
     padding-left: 30px;
 }
@@ -337,6 +341,12 @@
     border-radius: 20px;
 }
 
+.tfindex-widget .swiper.chart-swiper-thumb {
+    max-width: 28%;
+    position: absolute;
+    bottom: 30px;
+}
+
 .tfindex-widget .chart-swiper-thumb.swiper-grid-column>.swiper-wrapper {
     flex-direction: row;
     align-items: baseline;
@@ -348,6 +358,17 @@
     border: 1px solid #F5B236;
     box-sizing: border-box;
     border-radius: 5px;
+}
+
+.chart-swiper-thumb .stock {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 412px) {
+    .tfindex-widget .swiper.chart-swiper-thumb {
+        max-width: 100%;
+        position: unset;
+    }
 }
 
 /* Commitments */

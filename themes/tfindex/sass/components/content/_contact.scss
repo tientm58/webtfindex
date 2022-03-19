@@ -1,5 +1,5 @@
 .wpforms-container {
-  input[type="text"], input[type="email"], textarea {
+  input[type="text"], input[type="email"], textarea, select {
     border: 0.5px solid #BDBDBD;
     box-sizing: border-box;
     border-radius: 10px;
@@ -29,4 +29,9 @@
     width: 100%;
     border-radius: 10px;
   }
+}
+
+.wpforms-container textarea {
+  resize: vertical !important;
+  display: none;
 }

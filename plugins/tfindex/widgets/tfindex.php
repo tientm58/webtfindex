@@ -159,34 +159,40 @@ class TFIndex_TFindex extends Widget_Base {
         ?>
 
         <div class="tfindex-widget tfindex-widget-tfindex">
-            <div class="tfindex">
-                <div class="row">
-                    <div class="col-2 swiper tfindex-swiper tfindex-swiper-left">
-                        <div class="swiper-wrapper">
-                            <?php foreach ( $arr as $el ): ?>
-                                <div class="item swiper-slide">
-                                    <div class="content">
-                                        <div class="post post-title"><?php echo $el['post_name']; ?></div>
+            <div class="tfindex ast-container">
+                <div class="ast-row">
+                    <div class="ast-col-md-2 tfindex-swiper-thumb-block">
+                        <div class="slide-arrow slide-arrow-up"></div>
+                        <div class="swiper tfindex-swiper tfindex-swiper-thumb">
+                            <div class="swiper-wrapper">
+                                <?php foreach ( $arr as $el ): ?>
+                                    <div class="item swiper-slide">
+                                        <div class="content">
+                                            <div class="post post-title"><?php echo $el['post_name']; ?></div>
+                                        </div>
                                     </div>
-                                </div>
-                            <?php endforeach; ?>
+                                <?php endforeach; ?>
+                            </div>
                         </div>
+                        <div class="slide-arrow slide-arrow-down"></div>
                     </div>
-                    <div class="col-10 swiper tfindex-swiper-content">
+                    <div class="ast-col-md-10 swiper tfindex-swiper-content">
                         <div class="swiper-wrapper">
                             <?php foreach ( $arr as $el ): ?>
                                 <div class="item swiper-slide">
                                     <div class="content">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
+                                        <div class="ast-row tfindex-row">
+                                            <div class="ast-col-md-6">
+                                                <div class="avatar"><?php echo get_the_post_thumbnail ($el['id'], 'full'); ?></div>
                                             </div>
-                                            <div class="col-6">
-                                                <div class="icon"><img src="<?php echo $el['icon']; ?>" alt="<?php echo $el['post_name']; ?>"></div>
-                                                <div class="sub-header"><?php echo $el['sub_header']; ?></div>
-                                                <div class="description"><?php echo $el['description']; ?></div>
-                                                <div class="view-more"><button class="btn btn-primary"><a class="btn-link" href="">Xem chi tiết</a></button></div>
-                                            </div>
+                                            <div class="ast-col-md-6 tfindex-content-block">
+                                                <div class="tfindex-content">
+                                                    <div class="icon"><img src="<?php echo $el['icon']; ?>" alt="<?php echo $el['post_name']; ?>"></div>
+                                                    <div class="sub-header"><?php echo $el['sub_header']; ?></div>
+                                                    <div class="description"><?php echo $el['description']; ?></div>
+                                                    <div class="view-more"><button class="btn btn-primary"><a class="btn-link" href="">Xem chi tiết</a></button></div>
+                                                </div>
+                                             </div>
                                         </div>
                                     </div>
                                 </div>

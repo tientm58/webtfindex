@@ -7,19 +7,28 @@
 	let WidgetTFindexHandler = function( $scope, $ ) {
 		let tfindexNumOfSlides = 1;
 		let tfindexSlidesPerView = 4;
-		let tfindexThumbs = new Swiper(".tfindex-swiper", {
+		let tfindexThumbs = new Swiper(".tfindex-swiper-thumb", {
 			loop: true,
 			spaceBetween: 30,
 			// slidesPerView: tfindexSlidesPerView,
-			slidesPerView: 3,
+			slidesPerView: 1,
 			freeMode: true,
 			watchSlidesProgress: false,
 			// direction: "vertical",
 			direction: getDirection(),
 			paginationClickable: false,
 			allowTouchMove: true,
+			navigation: {
+				nextEl: ".slide-arrow-down",
+				prevEl: ".slide-arrow-up",
+			},
 			breakpoints: {
 				720: {
+					slidesPerView: 3,
+					allowTouchMove: false,
+					freeMode: false,
+				},
+				1024: {
 					slidesPerView: 4,
 					allowTouchMove: false,
 					freeMode: false,
@@ -34,21 +43,24 @@
 				},
 			},
 		});
-		// tfindexThumbs.on('click', function (e) {
-		// 	let nexSlide = (e.clickedIndex + 1) % tfindexNumOfSlides;
-		// 	tfindexThumbs.slideTo(nexSlide, 1000);
-		// },true);
+		tfindexThumbs.on('click', function (e) {
+			// let nexSlide = (e.clickedIndex + 1) % tfindexNumOfSlides;
+			// tfindexThumbs.slideTo(nexSlide, 1000);
+			$('.tfindex-swiper-thumb .post-title').css({'color': '#BDBDBD'})
+			$(e.clickedSlide).find('.post-title').css({'color': '#F5B236'})
+		},true);
 
 		new Swiper(".tfindex-swiper-content", {
 			loop: true,
+			freeMode: true,
 			spaceBetween: 10,
 			direction: "vertical",
 			allowTouchMove: false,
 			// autoplay: true,
-			// navigation: {
-			// 	nextEl: ".swiper-button-next",
-			// 	prevEl: ".swiper-button-prev",
-			// },
+			navigation: {
+				nextEl: ".slide-arrow-down",
+				prevEl: ".slide-arrow-up",
+			},
 			thumbs: {
 				swiper: tfindexThumbs,
 			},

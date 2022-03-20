@@ -26,4 +26,15 @@
       }
     }
   }
+
+  .ast-footer-social-wrap .footer-social-inner-wrap {
+    text-align: left;
+  }
+
+
+  @media screen and (max-width: 412px) {
+    .ast-footer-social-wrap .footer-social-inner-wrap {
+      text-align: center;
+    }
+  }
 }

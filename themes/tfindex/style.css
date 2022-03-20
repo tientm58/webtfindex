@@ -252,4 +252,14 @@ h3.tfindex-text {
 	color: #f9c349;
 }
 
+.site-footer .ast-footer-social-wrap .footer-social-inner-wrap {
+	text-align: left;
+}
+
+@media screen and (max-width: 412px) {
+	.site-footer .ast-footer-social-wrap .footer-social-inner-wrap {
+		text-align: center;
+	}
+}
+
 /*# sourceMappingURL=style.css.map */

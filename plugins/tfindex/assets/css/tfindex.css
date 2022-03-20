@@ -399,6 +399,12 @@
     border-radius: 15px;
 }
 
+@media screen and (max-width: 412px) {
+    .tfindex-widget .swiper.commitment-swiper-thumb .item {
+        font-size: 14px;
+    }
+}
+
 /* Staff */
 .tfindex-widget .staff-swiper .avatar {
     overflow: hidden;

@@ -160,29 +160,36 @@ class TFIndex_Testimonials extends Widget_Base {
         <div class="tfindex-widget tfindex-widget-testimonials">
             <div class="testimonials ast-container">
                 <div class="ast-row">
-                    <div class="ast-col-sm-6 swiper testimonials-swiper">
-                        <div class="swiper-wrapper">
-                            <?php foreach ( $arr as $el ): ?>
-                                <div class="item swiper-slide">
-                                    <div class="content">
-                                        <div class="ast-row">
-                                            <div class="ast-col-xs-2">
-                                                <div class="avatar"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
+                    <div class="ast-col-sm-7 ">
+                        <div class="ast-row">
+                            <div class="ast-col-sm-10">
+                                <div class="swiper testimonials-swiper">
+                                    <div class="swiper-wrapper">
+                                        <?php foreach ( $arr as $el ): ?>
+                                            <div class="item swiper-slide">
+                                                <div class="content">
+                                                    <div class="ast-row">
+                                                        <div class="ast-col-xs-2">
+                                                            <div class="avatar"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
+                                                        </div>
+                                                        <div class="ast-col-xs-10">
+                                                            <div class="client client-name"><?php echo $el['full_name']; ?></div>
+                                                            <div class="client client-position"><?php echo $el['identity_or_position']; ?></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="client-say">
+                                                        <?php echo $el['post_content']; ?>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="ast-col-xs-10">
-                                                <div class="client client-name"><?php echo $el['full_name']; ?></div>
-                                                <div class="client client-position"><?php echo $el['identity_or_position']; ?></div>
-                                            </div>
-                                        </div>
-                                        <div class="client-say">
-                                            <?php echo $el['post_content']; ?>
-                                        </div>
+                                        <?php endforeach; ?>
                                     </div>
                                 </div>
-                            <?php endforeach; ?>
+                            </div>
+                            <div class="ast-col-sm-2"></div>
                         </div>
                     </div>
-                    <div class="ast-col-sm-6 swiper testimonials-swiper-content">
+                    <div class="ast-col-sm-5 swiper testimonials-swiper-content">
                         <div class="swiper-wrapper">
                             <?php foreach ( $arr as $el ): ?>
                                 <div class="item swiper-slide">

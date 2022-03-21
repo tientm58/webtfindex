@@ -86,15 +86,10 @@
     }
 }
 
-/*.testimonials-swiper .item .content {*/
-/*    */
-/*}*/
-
-/* TFindex */
 /* TFindex */
 
 .tfindex-widget-tfindex .tfindex-swiper.swiper {
-    max-height: 330px;
+    max-height: 300px;
     padding: 15px 0;
 }
 
@@ -161,6 +156,12 @@
     align-items: center;
     display: flex;
     justify-content: center;
+}
+
+.tfindex .tfindex-middle {
+    vertical-align: middle;
+    align-items: center;
+    display: flex;
 }
 
 .tfindex .tfindex-swiper-content .icon {
@@ -355,12 +356,28 @@
 
 .tfindex-widget .chart-swiper-thumb .item {
     background: #FAFAFA;
-    border: 1px solid #F5B236;
+    border: 1px solid;
     box-sizing: border-box;
     border-radius: 5px;
 }
 
-.chart-swiper-thumb .stock {
+.tfindex-widget .chart-swiper-thumb .item.swiper-slide-thumb-active {
+    border: 1px solid #F5B236;
+}
+
+.tfindex-widget .chart-swiper-thumb .item.swiper-slide-thumb-active .stock-name {
+    color: #F5B236;
+}
+
+.tfindex-widget .chart-swiper-thumb .item:hover {
+    border: 1px solid #F5B236;
+}
+
+.tfindex-widget .chart-swiper-thumb .item:hover .stock-name {
+    color: #F5B236;
+}
+
+.chart-swiper-thumb .item {
     cursor: pointer;
 }
 

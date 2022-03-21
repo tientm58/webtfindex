@@ -160,7 +160,7 @@ class TFIndex_TFindex extends Widget_Base {
 
         <div class="tfindex-widget tfindex-widget-tfindex">
             <div class="tfindex ast-container">
-                <div class="ast-row">
+                <div class="ast-row tfindex-middle">
                     <div class="ast-col-md-2 tfindex-swiper-thumb-block">
                         <div class="slide-arrow slide-arrow-up"></div>
                         <div class="swiper tfindex-swiper tfindex-swiper-thumb">

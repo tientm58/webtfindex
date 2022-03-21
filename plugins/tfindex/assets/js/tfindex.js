@@ -171,6 +171,10 @@
 					direction: "vertical",
 				}
 			},
+			navigation: {
+				nextEl: ".testimonials-next",
+				prevEl: ".testimonials-prev",
+			},
 			on: {
 				beforeInit: function () {
 					numOfSlides = this.wrapperEl.querySelectorAll(".swiper-slide").length;
@@ -207,6 +211,10 @@
 			// },
 			thumbs: {
 				swiper: swiperThumbs,
+			},
+			navigation: {
+				nextEl: ".testimonials-next",
+				prevEl: ".testimonials-prev",
 			},
 		});
 	};

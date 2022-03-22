@@ -1,7 +1,47 @@
 #ast-desktop-header {
   .menu-item:hover {
-    .menu-link {
+    > .menu-link {
       color: #f9c349;
+    }
+  }
+
+  .menu-item {
+    .menu-text {
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 24px;
+    }
+  }
+}
+
+#primary-site-navigation {
+  ul.sub-menu {
+    background: unset;
+    border: unset;
+    box-shadow: unset;
+  }
+
+  .main-header-menu > .menu-item:hover {
+      &:after {
+        content: "";
+        height: 3px;
+        width: 100px;
+        background: #F5B336;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(-50%) translateX(-50%);
+        left: 50%;
+      }
+  }
+
+  .main-header-menu {
+    > .menu-item {
+      .sub-menu {
+        display: flex;
+        .menu-item {
+          float: left;
+        }
+      }
     }
   }
 }

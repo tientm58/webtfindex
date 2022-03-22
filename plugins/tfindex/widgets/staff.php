@@ -169,10 +169,6 @@ class TFIndex_Staff extends Widget_Base {
                                     <span class="close">&times;</span>
                                 </div>
                                 <div class="modal-body">
-<!--                                    <div class="avatar"></div>-->
-<!--                                    <div class="name"></div>-->
-<!--                                    <div class="position"></div>-->
-<!--                                    <div class="text"></div>-->
                                 </div>
                             </div>
                         </div>

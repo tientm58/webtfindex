@@ -247,6 +247,17 @@
     display: flex;
 }
 
+@media screen and (max-width: 412px) {
+    .tfindex .tfindex-middle {
+        display: block;
+    }
+    .tfindex .tfindex-swiper-content .content,
+    .tfindex .tfindex-swiper-content .tfindex-row,
+    .tfindex .tfindex-swiper-content .tfindex-content-block {
+        height: auto;
+    }
+}
+
 .tfindex .tfindex-swiper-content .icon {
     padding: 15px 0;
 }
@@ -326,10 +337,15 @@
 /* TFTalk */
 .tftalk-widget .swiper.tftalk-swiper {
     max-height: 800px;
+    height: 800px;
 }
 
 .tftalk-widget .tftalk-swiper .content-block {
     padding: 15px;
+}
+
+.tftalk-widget .tftalk-swiper .item {
+    padding: 5px;
 }
 
 .tftalk-widget .tftalk-swiper .item .content {
@@ -338,6 +354,21 @@
     border-radius: 15px;
     padding-bottom: 15px;
     overflow: hidden;
+}
+
+.tftalk-widget .tftalk-swiper .item .avatar img {
+    object-fit: cover;
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.tftalk-widget .category-title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4F4F4F;
 }
 
 .tftalk-widget  .tftalk-swiper .item:hover {
@@ -350,6 +381,13 @@
     font-size: 24px;
     line-height: 32px;
     color: #355580;
+    transition-property: all;
+    transition-duration: .6s;
+    transition-timing-function: ease;
+}
+
+.tftalk-widget .content-block .title:hover {
+    color: #F5B236;
 }
 
 .tftalk-widget .content-block .border-bottom {
@@ -401,6 +439,109 @@
     max-width: 411px;
 }
 
+.tftalk-widget .slide-arrow-left {
+    /*transform: rotate(0deg);*/
+    -webkit-mask-image: url(../images/arrow.svg);
+    mask-image: url(../images/arrow.svg);
+    background-color: #BDBDBD;
+    background-repeat: no-repeat;
+    width: 27px;
+    height: 22px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 99;
+    transform: rotate(0deg) translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: -45px;
+}
+
+.tftalk-widget .slide-arrow-right {
+    /*transform: rotate(0deg);*/
+    -webkit-mask-image: url(../images/arrow.svg);
+    mask-image: url(../images/arrow.svg);
+    background-color: #BDBDBD;
+    background-repeat: no-repeat;
+    width: 27px;
+    height: 22px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 99;
+    transform: rotate(180deg) translateY(-50%) translateX(-50%);
+    top: 50%;
+    right: -45px;
+}
+
+.tftalk-widget .slide-arrow-left:hover,
+.tftalk-widget .slide-arrow-right:hover {
+    background: #F5B236;
+}
+
+.tfindex-register .btn {
+    border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    color: #fff;
+    border-color: #f9c349;
+    background-color: #f9c349;
+    padding-top: 16px;
+    padding-right: 24px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    /*font-family: 'Inter',sans-serif;*/
+    font-weight: 500;
+    font-size: 15px;
+    font-size: 0.9375rem;
+    line-height: 1;
+    text-transform: capitalize;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.tfindex-register .btn:focus,
+.tfindex-register .btn:hover {
+    color: #fff;
+    background-color: #ffb100;
+    border-color: #f9c349;
+}
+
+.tfindex-widget .tftalk .modal-content {
+    background: #fff;
+}
+
+.tfindex-widget .tftalk .tfindex-form-events {
+    padding: 30px;
+}
+
+.tfindex-widget .title-center {
+    text-align: center;
+}
+
+.tfindex-widget .tftalk .form-row label,
+.tfindex-widget .tftalk .form-row input {
+    width: 100%;
+    display: block;
+}
+
+.tfindex-widget .tftalk .form-row label {
+    font-weight: 600;
+}
+
+.tfindex-widget .tftalk .form-row > div {
+    padding-bottom: 15px;
+}
+
+.tfindex-widget .tftalk .form-row input {
+    border-radius: 30px;
+}
+
+.tfindex-widget .tftalk  .tfindex-form-events .btn {
+    width: 100%;
+}
+
 /* Chart */
 
 .tfindex-widget .chart-swiper .row [class^="col"] {
@@ -439,7 +580,7 @@
 
 .tfindex-widget .chart-swiper-thumb .item {
     background: #FAFAFA;
-    border: 1px solid;
+    border: 0.5px solid #BDBDBD;
     box-sizing: border-box;
     border-radius: 5px;
 }
@@ -448,8 +589,16 @@
     border: 1px solid #F5B236;
 }
 
+.tfindex-widget .chart-swiper-thumb .item .stock-name {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+}
+
 .tfindex-widget .chart-swiper-thumb .item.swiper-slide-thumb-active .stock-name {
     color: #F5B236;
+    font-weight: 600;
 }
 
 .tfindex-widget .chart-swiper-thumb .item:hover {

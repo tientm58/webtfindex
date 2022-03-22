@@ -75,14 +75,15 @@
 	};
 
 	let WidgetTFTalkHandler = function( $scope, $ ) {
-		let tftalkSwiper = new Swiper('.tftalk-swiper', {
+		const TFTalkSwiper = new Swiper('.tftalk-swiper', {
+			loop: true,
 			slidesPerView: 1,
 			spaceBetween: 30,
 			// direction: getDirection(),
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
-			},
+			// navigation: {
+			// 	nextEl: '.swiper-button-next',
+			// 	prevEl: '.swiper-button-prev',
+			// },
 			breakpoints: {
 				730: {
 					slidesPerView: 2,
@@ -92,6 +93,10 @@
 					spaceBetween: 30,
 				},
 			},
+			navigation: {
+				nextEl: '.slide-arrow-right',
+				prevEl: '.slide-arrow-left',
+			},
 			on: {
 				// resize: function () {
 				// 	tftalkSwiper.changeDirection(getDirection());
@@ -99,12 +104,16 @@
 			},
 		});
 
-		function getDirection() {
-			let windowWidth = window.innerWidth;
-			let direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+		let modal = $("#tfindex-form-popup");
+		let closeBtn = $(".close")[0];
 
-			return direction;
+		closeBtn.onclick = function() {
+			modal.hide();
 		}
+
+		$('.tftalk-swiper .tfindex-register').on('click', function (e) {
+			modal.show();
+		});
 	};
 
 	let WidgetChartHandler = function( $scope, $ ) {

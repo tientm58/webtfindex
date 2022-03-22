@@ -165,6 +165,10 @@ class TFIndex_TFTalk extends Widget_Base {
         <div class="tfindex-widget tftalk-widget tftalk-widget-tftalk">
             <div class="tftalk">
                 <div class="row">
+                    <div class="tfindex-swiper-control">
+                        <div class="slide-arrow slide-arrow-left" tabindex="0" role="button" aria-label="Previous slide"></div>
+                        <div class="slide-arrow slide-arrow-right" tabindex="0" role="button" aria-label="Next slide"></div>
+                    </div>
                     <div class="swiper tftalk-swiper">
                         <div class="swiper-wrapper">
                             <?php foreach ( $arr as $el ): ?>
@@ -172,6 +176,7 @@ class TFIndex_TFTalk extends Widget_Base {
                                     <div class="content">
                                         <div class="avatar"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
                                         <div class="content-block ast-container">
+                                            <div class="category-title"><span>WORKSHOP</span></div>
                                             <div class="title"><?php echo $el['post_name']; ?></div>
                                             <div class="author border-bottom">
                                                 <div class="ast-row">
@@ -211,11 +216,50 @@ class TFIndex_TFTalk extends Widget_Base {
                                                     <?php echo $el['content']; ?>
                                                 </div>
                                             </div>
-                                            <div class="view-more"><button class="btn btn-primary"><a class="btn-link" href="">Đăng ký</a></button></div>
+                                            <div class="view-more tfindex-register"><div class="btn btn-primary"><a class="btn-link" href="">Đăng ký</a></div></div>
                                         </div>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- The Modal -->
+                <div id="tfindex-form-popup" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="tfindex-form-events">
+                                <h3 class="title-center">Đăng ký tham gia sự kiện</h3>
+                                <form class="needs-validation" novalidate>
+                                    <div class="form-row">
+                                        <div class="col-md-4 mb-3">
+                                            <label for="tfindex-event">Sự kiện</label>
+                                            <input type="text" class="form-control" id="tfindex-event" placeholder="Sự kiện" value="" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="register-name">Họ và Tên</label>
+                                            <input type="text" class="form-control" id="register-name" placeholder="Họ và Tên" required>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label for="register-email">Email</label>
+                                            <input type="email" class="form-control" id="register-email" placeholder="Email" required>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label for="register-phone">Số điện thoại</label>
+                                            <input type="text" class="form-control" id="register-phone" placeholder="Số điện thoại" required>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" type="button">Đăng ký</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

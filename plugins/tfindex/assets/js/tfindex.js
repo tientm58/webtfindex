@@ -132,6 +132,8 @@
 					method: "GET",
 					dataType: "json",
 					data: data
+				}).done(function() {
+					modal.hide();
 				});
 			});
 		});

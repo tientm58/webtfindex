@@ -550,6 +550,20 @@ input#tfindex-event:hover {
     cursor: not-allowed;
 }
 
+.tftalk-widget .upcoming-event {
+    position: absolute;
+    right: 20px;
+    top: 45px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+    background: #F5B336;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
 /* Chart */
 
 .tfindex-widget .chart-swiper .row [class^="col"] {

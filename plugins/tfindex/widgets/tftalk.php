@@ -174,7 +174,18 @@ class TFIndex_TFTalk extends Widget_Base {
                             <?php foreach ( $arr as $el ): ?>
                                 <div class="item swiper-slide">
                                     <div class="content">
-                                        <div class="avatar"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
+                                        <div class="avatar">
+                                            <?php
+                                            $explode = explode('/', $el['time']);
+                                            $upcoming = $explode[2] . '-' . $explode[1] . '-' . $explode[0];
+                                            $upcoming = date("Y-m-d", strtotime($upcoming));
+                                            $today = date("Y-m-d");
+                                            if ($upcoming >= $today) {
+                                                echo '<div class="upcoming-event">UPCOMING</div>';
+                                            }
+                                            ?>
+                                            <?php echo get_the_post_thumbnail ($el['id']); ?>
+                                        </div>
                                         <div class="content-block ast-container">
                                             <div class="category-title"><span>WORKSHOP</span></div>
                                             <div class="title"><?php echo $el['post_name']; ?></div>

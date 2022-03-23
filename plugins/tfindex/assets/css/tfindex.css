@@ -542,6 +542,14 @@
     width: 100%;
 }
 
+input#tfindex-event {
+    background: #d7d7d7;
+}
+
+input#tfindex-event:hover {
+    cursor: not-allowed;
+}
+
 /* Chart */
 
 .tfindex-widget .chart-swiper .row [class^="col"] {
@@ -567,7 +575,7 @@
 }
 
 .tfindex-widget .swiper.chart-swiper-thumb {
-    max-width: 28%;
+    max-width: 30%;
     position: absolute;
     bottom: 30px;
 }
@@ -583,6 +591,7 @@
     border: 0.5px solid #BDBDBD;
     box-sizing: border-box;
     border-radius: 5px;
+    padding: 5px;
 }
 
 .tfindex-widget .chart-swiper-thumb .item.swiper-slide-thumb-active {

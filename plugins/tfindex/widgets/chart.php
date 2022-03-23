@@ -140,7 +140,7 @@ class TFIndex_Chart extends Widget_Base {
             'post_status' => 'publish',
             'posts_per_page' => $numberOfChart,
             'orderby' => 'date',
-            'order' => 'ASC',
+            'order' => 'DESC',
         );
         $loop = get_posts($args);
 

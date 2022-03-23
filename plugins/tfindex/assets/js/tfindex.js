@@ -112,7 +112,28 @@
 		}
 
 		$('.tftalk-swiper .tfindex-register').on('click', function (e) {
+			const eventName = $(this).data("event");
+			const tfindexEvent = $('#tfindex-event');
+			tfindexEvent.val(eventName);
+			tfindexEvent.prop( "disabled", true );
 			modal.show();
+
+			$( "#tfindex-form-events" ).submit(function( event ) {
+				event.preventDefault();
+				const url = 'https://script.google.com/macros/s/AKfycbxbE12PumehGNulS71v1yk8qxFauYJ92tDPNbtxK-MqdvrsIguUagzk5PGy6mKgoQOM/exec';
+				const data = {
+					event: eventName,
+					name: $('#tfindex-register-name').val(),
+					email: $('#tfindex-register-email').val(),
+					phone: $('#tfindex-register-phone').val(),
+				};
+				$.ajax({
+					url: url,
+					method: "GET",
+					dataType: "json",
+					data: data
+				});
+			});
 		});
 	};
 
@@ -121,7 +142,7 @@
 		let chartSlidesPerView = 3;
 		let chartSwiperThumb = new Swiper(".chart-swiper-thumb", {
 			loop: false,
-			spaceBetween: 30,
+			spaceBetween: 24,
 			allowTouchMove: false,
 			slidesPerView: 3,
 			grid: {

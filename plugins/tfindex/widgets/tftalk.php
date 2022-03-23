@@ -216,7 +216,11 @@ class TFIndex_TFTalk extends Widget_Base {
                                                     <?php echo $el['content']; ?>
                                                 </div>
                                             </div>
-                                            <div class="view-more tfindex-register"><div class="btn btn-primary"><a class="btn-link" href="">Đăng ký</a></div></div>
+                                            <div class="view-more tfindex-register" data-event="<?php echo $el['post_name']; ?>">
+                                                <div class="btn btn-primary">
+                                                    <a class="btn-link" href="#" onclick='return false;'>Đăng ký</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -236,7 +240,7 @@ class TFIndex_TFTalk extends Widget_Base {
                         <div class="modal-body">
                             <div class="tfindex-form-events">
                                 <h3 class="title-center">Đăng ký tham gia sự kiện</h3>
-                                <form class="needs-validation" novalidate>
+                                <form id="tfindex-form-events" class="needs-validation">
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3">
                                             <label for="tfindex-event">Sự kiện</label>
@@ -245,19 +249,19 @@ class TFIndex_TFTalk extends Widget_Base {
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-6 mb-3">
-                                            <label for="register-name">Họ và Tên</label>
-                                            <input type="text" class="form-control" id="register-name" placeholder="Họ và Tên" required>
+                                            <label for="tfindex-register-name">Họ và Tên</label>
+                                            <input type="text" class="form-control" id="tfindex-register-name" placeholder="Họ và Tên" required>
                                         </div>
                                         <div class="col-md-3 mb-3">
-                                            <label for="register-email">Email</label>
-                                            <input type="email" class="form-control" id="register-email" placeholder="Email" required>
+                                            <label for="tfindex-register-email">Email</label>
+                                            <input type="email" class="form-control" id="tfindex-register-email" placeholder="Email" required>
                                         </div>
                                         <div class="col-md-3 mb-3">
-                                            <label for="register-phone">Số điện thoại</label>
-                                            <input type="text" class="form-control" id="register-phone" placeholder="Số điện thoại" required>
+                                            <label for="tfindex-register-phone">Số điện thoại</label>
+                                            <input type="text" class="form-control" id="tfindex-register-phone" placeholder="Số điện thoại" required minlength="10" maxlength="11">
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary" type="button">Đăng ký</button>
+                                    <button class="btn btn-primary tfindex-register-this" type="submit">Đăng ký</button>
                                 </form>
                             </div>
                         </div>

@@ -38,10 +38,14 @@
   button.wpforms-submit {
     width: 100%;
     border-radius: 10px;
+    margin: 30px 0;
   }
 }
 
 .wpforms-container textarea {
   resize: vertical !important;
+}
+
+.wpforms-field.wpforms-field-textarea {
   display: none;
 }

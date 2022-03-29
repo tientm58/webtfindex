@@ -16,6 +16,13 @@ h3.tfindex-text {
   }
 }
 
+@media screen and (min-width: 413px) {
+  .tfindex-d-block {
+    display: block !important;
+  }
+}
+
+
 @media screen and (max-width: 412px) {
   .tfindex-text {
     font-size: 32px;

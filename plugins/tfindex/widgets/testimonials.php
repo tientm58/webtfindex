@@ -168,7 +168,7 @@ class TFIndex_Testimonials extends Widget_Base {
                                         <?php foreach ( $arr as $el ): ?>
                                             <div class="item swiper-slide">
                                                 <div class="content">
-                                                    <div class="ast-row">
+                                                    <div class="ast-row testimonials-author-info">
                                                         <div class="ast-col-xs-2">
                                                             <div class="avatar"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
                                                         </div>
@@ -202,13 +202,13 @@ class TFIndex_Testimonials extends Widget_Base {
                                         <div class="client-say">
                                             <?php echo $el['post_content']; ?>
                                         </div>
-                                        <div class="ast-row">
-                                            <div class="ast-col-xs-2">
+                                        <div class="ast-row testimonials-author-info">
+                                            <div class="ast-col-xs-3">
                                                 <div class="avatar"><?php echo get_the_post_thumbnail ($el['id']); ?></div>
                                             </div>
-                                            <div class="ast-col-xs-10">
-                                                <div class="client"><?php echo $el['full_name']; ?></div>
-                                                <div class="client"><?php echo $el['identity_or_position']; ?></div>
+                                            <div class="ast-col-xs-9">
+                                                <div class="client client-name"><?php echo $el['full_name']; ?></div>
+                                                <div class="client client-position"><?php echo $el['identity_or_position']; ?></div>
                                             </div>
                                         </div>
                                     </div>

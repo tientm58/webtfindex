@@ -1,4 +1,4 @@
-/*! elementor - v3.6.0 - 21-03-2022 */
+/*! elementor - v3.6.1 - 23-03-2022 */
 "use strict";
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["container"],{
 

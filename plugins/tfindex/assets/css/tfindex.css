@@ -30,6 +30,33 @@
         max-width: unset;
     }
 }
+
+.tfindex-widget .testimonials-swiper-content .testimonials-author-info{
+    padding-top: 25px;
+}
+
+.tfindex-widget .testimonials .testimonials-swiper-content .avatar img {
+    width: 96px;
+    height: auto;
+}
+
+.tfindex-widget .testimonials .testimonials-swiper-content .client-name {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.tfindex-widget .testimonials .testimonials-swiper-content .client-position {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+}
+
+.tfindex-widget .testimonials .testimonials-swiper-content .ast-col-xs-9 {
+    /* padding-left: 0; */
+    padding: 15px 0;
+}
+
 .tfindex-widget .testimonials-swiper-content .item:before {
     content: "";
     background: url(../images/quote.png) no-repeat;
@@ -57,7 +84,7 @@
 }
 
 .tfindex-widget .testimonials .client-name {
-    padding: 5px 0;
+    padding: 5px 0 0 0;
     font-style: normal;
     font-size: 17px;
     line-height: 24px;
@@ -166,6 +193,18 @@
 
 .tfindex-widget .testimonials .slide-arrow:hover  .testimonials-arrow-icon {
     background: #EE762B;
+}
+
+.tfindex-widget .testimonials-author-info {
+    padding-bottom: 15px;
+}
+
+.tfindex-widget .testimonials-author-info .ast-col-xs-2 {
+    padding-right: 0;
+}
+
+.tfindex-widget .testimonials-author-info .ast-col-xs-10 {
+    padding-left: 0;
 }
 
 

@@ -6,7 +6,7 @@ jQuery( document ).ready( function( $ ) {
 	$( function() {
 		const $form = $( '.wpforms-form' );
 		const $input = $form.find( '.form-money input' );
-		const $textarea = $form.find( 'textarea' );
+		const $textarea = $form.find( '.wpforms-field.wpforms-field-textarea' );
 		const $select = $form.find( '.wpforms-field-select select' );
 
 		$input.on( 'keyup', function( event ) {

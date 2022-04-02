@@ -160,9 +160,9 @@ class TFIndex_Testimonials extends Widget_Base {
         <div class="tfindex-widget tfindex-widget-testimonials">
             <div class="testimonials ast-container">
                 <div class="ast-row">
-                    <div class="ast-col-sm-7">
+                    <div class="ast-col-sm-7 testimonials-thumb-block">
                         <div class="ast-row tfindex-flex-end">
-                            <div class="ast-col-sm-10 tfindex-pdr-0">
+                            <div class="ast-col-sm-10 tfindex-pdr-0 tfindex-pdl-0">
                                 <div class="swiper testimonials-swiper">
                                     <div class="swiper-wrapper">
                                         <?php foreach ( $arr as $el ): ?>

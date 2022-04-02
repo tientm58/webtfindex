@@ -1,7 +1,0 @@
-{
-  "devDependencies": {
-    "@wordpress/scripts": "^22.1.0",
-    "dir-archiver": "^1.2.0",
-    "rtlcss": "^3.5.0"
-  }
-}

@@ -113,9 +113,10 @@
 
 .testimonials-swiper .item.swiper-slide .content {
     background: #FFFFFF;
-    box-shadow: 0 1px 3px rgba(53, 85, 128, 0.15);
+    /*box-shadow: 0 1px 3px rgba(53, 85, 128, 0.15);*/
+    box-shadow: 0 2px 30px rgba(53, 85, 128, 0.15);
     border-radius: 15px;
-    margin: 30px 30px 30px 0;
+    margin: 30px 30px 15px 5px;
     padding: 30px;
 }
 
@@ -124,8 +125,31 @@
         margin: unset;
     }
 
-    .testimonials-swiper-content {
+    /*.testimonials-swiper-content {*/
+    /*    display: none;*/
+    /*}*/
+    .tfindex-widget-testimonials .testimonials-thumb-block {
         display: none;
+    }
+
+    .tfindex-widget-testimonials .swiper-vertical>.swiper-wrapper {
+        display: block;
+    }
+
+    .tfindex-widget-testimonials .swiper {
+        max-height: 330px;
+    }
+
+    .tfindex-widget .testimonials-swiper-content .item:before {
+        top: 0;
+    }
+
+    .tfindex-widget .testimonials .client-say {
+        padding-top: 40px;
+    }
+
+    .testimonials-swiper-content .swiper-wrapper .swiper-slide {
+        display: block;
     }
 }
 
@@ -287,14 +311,7 @@
 }
 
 @media screen and (max-width: 412px) {
-    .tfindex .tfindex-middle {
-        display: block;
-    }
-    .tfindex .tfindex-swiper-content .content,
-    .tfindex .tfindex-swiper-content .tfindex-row,
-    .tfindex .tfindex-swiper-content .tfindex-content-block {
-        height: auto;
-    }
+
 }
 
 .tfindex .tfindex-swiper-content .icon {
@@ -346,8 +363,26 @@
 }
 
 @media screen and (max-width: 412px) {
+
+    .tfindex-swiper-thumb-block {
+        padding: 0;
+    }
+
+    .tfindex .tfindex-middle {
+        display: block;
+    }
+    .tfindex .tfindex-swiper-content .content,
+    .tfindex .tfindex-swiper-content .tfindex-row,
+    .tfindex .tfindex-swiper-content .tfindex-content-block {
+        height: auto;
+    }
+
+    .tfindex-widget-tfindex .tfindex-swiper.swiper {
+        max-height: 75px;
+    }
+
     .tfindex-widget-tfindex .tfindex-swiper-content.swiper {
-        max-height: 900px;
+        max-height: 850px;
     }
 
     .tfindex .tfindex-swiper-content .content,

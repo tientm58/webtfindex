@@ -46,11 +46,11 @@
 		tfindexThumbs.on('click', function (e) {
 			// let nexSlide = (e.clickedIndex + 1) % tfindexNumOfSlides;
 			// tfindexThumbs.slideTo(nexSlide, 1000);
-			$('.tfindex-swiper-thumb .post-title').css({'color': '#BDBDBD'})
-			$(e.clickedSlide).find('.post-title').css({'color': '#F5B236'})
+			$('.tfindex-swiper-thumb .post-title').css({'color': '#BDBDBD'});
+			$(e.clickedSlide).find('.post-title').css({'color': '#F5B236'});
 		},true);
 
-		new Swiper(".tfindex-swiper-content", {
+		const tfindexSwiper = new Swiper(".tfindex-swiper-content", {
 			loop: true,
 			freeMode: true,
 			spaceBetween: 10,
@@ -64,6 +64,14 @@
 			thumbs: {
 				swiper: tfindexThumbs,
 			},
+		});
+
+		$('.slide-arrow').on('click', function (e) {
+			// e.preventDefault();
+			const activeIndex = (tfindexSwiper.activeIndex - 1) % tfindexNumOfSlides;
+			// console.log('activeIndex: ', activeIndex)
+			$('.tfindex-swiper-thumb .post-title').css({'color': '#BDBDBD'});
+			$(`.swiper-slide[data-swiper-slide-index=${activeIndex}] .post-title`).css({'color': '#F5B236'});
 		});
 
 		function getDirection() {

@@ -229,26 +229,15 @@
 		const testimonialSwiper = new Swiper(".testimonials-swiper-content", {
 			loop: true,
 			spaceBetween: 10,
-			direction: "vertical",
-			// allowTouchMove: true,
-			// breakpoints: {
-			// 	730: {
-			// 		// slidesPerView: 2,
-			// 		allowTouchMove: false,
-			// 		direction: "vertical",
-			// 	},
-			// 	1024: {
-			// 		// slidesPerView: 3,
-			// 		// spaceBetween: 30,
-			// 		allowTouchMove: false,
-			// 		direction: "vertical",
-			// 	},
-			// },
-			// autoplay: true,
-			// navigation: {
-			// 	nextEl: ".swiper-button-next",
-			// 	prevEl: ".swiper-button-prev",
-			// },
+			direction: "horizontal",
+			allowTouchMove: true,
+			breakpoints: {
+				730: {
+					// slidesPerView: 2,
+					allowTouchMove: false,
+					direction: "vertical",
+				},
+			},
 			thumbs: {
 				swiper: swiperThumbs,
 			},

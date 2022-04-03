@@ -226,7 +226,7 @@
 			swiperThumbs.slideTo(nexSlide, 1000);
 		},true);
 
-		new Swiper(".testimonials-swiper-content", {
+		const testimonialSwiper = new Swiper(".testimonials-swiper-content", {
 			loop: true,
 			spaceBetween: 10,
 			direction: "vertical",
@@ -256,7 +256,15 @@
 				nextEl: ".testimonials-next",
 				prevEl: ".testimonials-prev",
 			},
+			on: {
+				resize: function () {
+					testimonialSwiper.changeDirection(getDirection());
+				},
+			},
 		});
+		function getDirection() {
+			return window.innerWidth > 760 ? 'vertical' : 'horizontal';
+		}
 	};
 
 	let WidgetStaffHandler = function( $scope, $ ) {

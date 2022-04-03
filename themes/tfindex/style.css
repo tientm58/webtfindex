@@ -216,13 +216,13 @@ h3.tfindex-text {
 	margin-bottom: 0;
 }
 
-@media screen and (min-width: 413px) {
+@media screen and (min-width: 441px) {
 	.tfindex-d-block {
 		display: block !important;
 	}
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 440px) {
 	.tfindex-text {
 		font-size: 32px;
 		line-height: 56px;
@@ -335,7 +335,7 @@ h3.tfindex-text {
 	text-align: left;
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 440px) {
 	.site-footer .ast-footer-social-wrap .footer-social-inner-wrap {
 		text-align: center;
 	}

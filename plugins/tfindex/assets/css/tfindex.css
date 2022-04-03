@@ -120,7 +120,7 @@
     padding: 30px;
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 440px) {
     .testimonials-swiper .item.swiper-slide .content {
         margin: unset;
     }
@@ -310,7 +310,7 @@
     display: flex;
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 440px) {
 
 }
 
@@ -362,7 +362,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 440px) {
 
     .tfindex-swiper-thumb-block {
         padding: 0;
@@ -710,7 +710,7 @@ input#tfindex-event:hover {
     cursor: pointer;
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 440px) {
     .tfindex-widget .swiper.chart-swiper-thumb {
         max-width: 100%;
         position: unset;
@@ -745,7 +745,7 @@ input#tfindex-event:hover {
     border-radius: 15px;
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 440px) {
     .tfindex-widget .swiper.commitment-swiper-thumb .item {
         font-size: 14px;
     }

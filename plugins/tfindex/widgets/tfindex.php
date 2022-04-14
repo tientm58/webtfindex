@@ -109,7 +109,7 @@ class TFIndex_TFindex extends Widget_Base {
 		$this->add_control(
 			'tfindex',
 			[
-				'label' => __( 'TFindex style', 'elementor-tfindex' ),
+				'label' => __( 'TFindex number', 'elementor-tfindex' ),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 5,
 			]

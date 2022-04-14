@@ -216,8 +216,8 @@ class TFIndex_TFTalk extends Widget_Base {
                                                         <div class="fee"><?php echo number_format( $el['fee'], absint( 0 ), null, '.' ) ?> vnđ</div>
                                                     </div>
                                                     <div class="ast-col-xs-6">
-                                                        <div class="fee-text">Số lượng học viên</div>
-                                                        <div class="fee"><?php echo $el['students']; ?></div>
+                                                        <div class="fee-text">Số lượng</div>
+                                                        <div class="fee"><?php echo $el['students']; ?> học viên</div>
                                                     </div>
                                                 </div>
                                             </div>

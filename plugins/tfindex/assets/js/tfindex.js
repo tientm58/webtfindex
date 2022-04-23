@@ -66,13 +66,23 @@
 			},
 		});
 
+		// $('.slide-arrow').on('click', function (e) {
+		// 	e.preventDefault();
+		// 	const activeIndex = (tfindexSwiper.activeIndex - 1) % tfindexNumOfSlides;
+		// 	// console.log('activeIndex: ', activeIndex)
+		// 	$('.tfindex-swiper-thumb .post-title').css({'color': '#BDBDBD'});
+		// 	$(`.swiper-slide[data-swiper-slide-index=${activeIndex}] .post-title`).css({'color': '#F5B236'});
+		// });
+
 		$('.slide-arrow').on('click', function (e) {
-			// e.preventDefault();
-			const activeIndex = (tfindexSwiper.activeIndex - 1) % tfindexNumOfSlides;
-			// console.log('activeIndex: ', activeIndex)
+			e.preventDefault();
+			let activeIndex = (tfindexSwiper.activeIndex - 1) % tfindexNumOfSlides;
+			if (activeIndex === -1 ) {
+				activeIndex += tfindexNumOfSlides;
+			}
 			$('.tfindex-swiper-thumb .post-title').css({'color': '#BDBDBD'});
-			$(`.swiper-slide[data-swiper-slide-index=${activeIndex}] .post-title`).css({'color': '#F5B236'});
-		});
+			$(`.swiper-slide[data-swiper-slide-index="${activeIndex}"] .post-title`).css({'color': '#F5B236'});
+		})
 
 		function getDirection() {
 			let windowWidth = window.innerWidth;

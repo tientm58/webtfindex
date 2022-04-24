@@ -243,6 +243,10 @@
     margin: unset;
 }
 
+.tfindex-swiper .item.swiper-slide-thumb-active .post.post-title {
+    /*color: rgb(245, 178, 54) !important;*/
+}
+
 @media only screen and (min-width: 45em) {
     .tfindex-widget-tfindex .col-10 {
         width: calc(100% - 12.66667%);

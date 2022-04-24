@@ -43,12 +43,21 @@
 				},
 			},
 		});
-		tfindexThumbs.on('click', function (e) {
-			// let nexSlide = (e.clickedIndex + 1) % tfindexNumOfSlides;
-			// tfindexThumbs.slideTo(nexSlide, 1000);
+		// tfindexThumbs.on('click', function (e) {
+		// 	// let nexSlide = (e.clickedIndex + 1) % tfindexNumOfSlides;
+		// 	// tfindexThumbs.slideTo(nexSlide, 1000);
+		// 	$('.tfindex-swiper-thumb .post-title').css({'color': '#BDBDBD'});
+		// 	$(e.clickedSlide).find('.post-title').css({'color': '#F5B236'});
+		// 	console.log('clicked: ', 'tfindexThumbs')
+		// },true);
+
+		$('.item.swiper-slide').on('click', function (event) {
+			event.preventDefault();
 			$('.tfindex-swiper-thumb .post-title').css({'color': '#BDBDBD'});
-			$(e.clickedSlide).find('.post-title').css({'color': '#F5B236'});
-		},true);
+			$( event.currentTarget ).find( '.post-title' ).css( "color", "#F5B236" );
+			let currentIndexClicked = $(event.currentTarget).data('swiper-slide-index');
+			tfindexSwiper.slideTo(currentIndexClicked + 1);
+		})
 
 		const tfindexSwiper = new Swiper(".tfindex-swiper-content", {
 			loop: true,
@@ -61,18 +70,10 @@
 				nextEl: ".slide-arrow-down",
 				prevEl: ".slide-arrow-up",
 			},
-			thumbs: {
-				swiper: tfindexThumbs,
-			},
+			// thumbs: {
+			// 	swiper: tfindexThumbs,
+			// },
 		});
-
-		// $('.slide-arrow').on('click', function (e) {
-		// 	e.preventDefault();
-		// 	const activeIndex = (tfindexSwiper.activeIndex - 1) % tfindexNumOfSlides;
-		// 	// console.log('activeIndex: ', activeIndex)
-		// 	$('.tfindex-swiper-thumb .post-title').css({'color': '#BDBDBD'});
-		// 	$(`.swiper-slide[data-swiper-slide-index=${activeIndex}] .post-title`).css({'color': '#F5B236'});
-		// });
 
 		$('.slide-arrow').on('click', function (e) {
 			e.preventDefault();

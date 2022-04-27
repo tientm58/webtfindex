@@ -205,7 +205,7 @@ class TFIndex_TFTalk extends Widget_Base {
                                                 <div class="ast-row">
                                                     <div class="ast-col-xs-6">
                                                         <div class="time-text">Thời gian</div>
-                                                        <div class="time"><?php echo $el['time']; ?></div>
+                                                        <div class="time"><?php echo str_replace('/', '-', $el['time']); ?></div>
                                                     </div>
                                                     <div class="ast-col-xs-6">
                                                         <div class="type-text">Hình thức</div>

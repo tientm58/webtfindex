@@ -116,8 +116,19 @@
     /*box-shadow: 0 1px 3px rgba(53, 85, 128, 0.15);*/
     box-shadow: 0 2px 30px rgba(53, 85, 128, 0.15);
     border-radius: 15px;
-    margin: 30px 30px 15px 5px;
+    margin: 0px 30px 0px 5px;
     padding: 30px;
+}
+
+.testimonials-thumb-block .swiper-slide-active {
+    margin-bottom: 0px !important;
+}
+.testimonials-thumb-block .swiper-slide-next {
+    margin-bottom: 45px !important;
+}
+
+.testimonials-thumb-block .swiper-wrapper {
+    /* transform: translate3d(0px, -560px, 0px) !important; */
 }
 
 @media screen and (max-width: 440px) {
@@ -160,7 +171,14 @@
 }
 
 .tfindex-widget .testimonials .slide-control {
-   padding-bottom: 30px;
+   padding-bottom: 57px;
+}
+.site-primary-footer-wrap .site-footer-primary-section-2 {
+    margin-left: 80px;
+}
+
+.site-primary-footer-wrap .site-footer-primary-section-3 {
+    margin-left: 65px;
 }
 
 .tfindex-widget .slide-arrow .testimonials-arrow-up {
@@ -481,6 +499,10 @@
     padding: 15px 0;
 }
 
+.tftalk-widget .course-info .ast-col-xs-6 {
+    margin-bottom: 12px;
+}
+
 .tftalk-widget .view-more .btn {
     width: 100%;
 }
@@ -507,6 +529,7 @@
     font-size: 17px;
     line-height: 24px;
     color: #4F4F4F;
+    text-transform: capitalize;
 }
 
 .tftalk-widget .description {
@@ -529,9 +552,10 @@
     padding: 0;
     position: absolute;
     z-index: 99;
-    transform: rotate(0deg) translateY(-50%) translateX(-50%);
+    transform: rotate(0deg) translateY(-50%) translateX(-150%);
     top: 50%;
     left: -45px;
+    margin-right: 20px;
 }
 
 .tftalk-widget .slide-arrow-right {
@@ -546,9 +570,10 @@
     padding: 0;
     position: absolute;
     z-index: 99;
-    transform: rotate(180deg) translateY(-50%) translateX(-50%);
+    transform: rotate(180deg) translateY(-50%) translateX(-150%);
     top: 50%;
     right: -45px;
+    margin-left: 20px;
 }
 
 .tftalk-widget .slide-arrow-left:hover,
@@ -656,6 +681,7 @@ input#tfindex-event:hover {
 
 .tfindex-widget .chart-swiper .chart-image {
     padding-left: 30px;
+    padding-top: 15px;
 }
 
 .tfindex-widget .chart-swiper .description {
@@ -675,7 +701,7 @@ input#tfindex-event:hover {
 .tfindex-widget .swiper.chart-swiper-thumb {
     max-width: 30%;
     position: absolute;
-    bottom: 30px;
+    bottom: 60px;
 }
 
 .tfindex-widget .chart-swiper-thumb.swiper-grid-column>.swiper-wrapper {
@@ -753,6 +779,16 @@ input#tfindex-event:hover {
     box-shadow: 0 2px 40px rgba(245, 179, 54, 0.15);
     backdrop-filter: blur(4px);
     border-radius: 15px;
+}
+
+.tfindex-widget .swiper.commitment-swiper-content .elementor-image-commitment {
+    z-index: -1;
+}
+
+.tfindex-widget-commitment .swiper-slide-active {
+    font-weight: 600 !important;
+    line-height: 24px !important;
+    color: #F5B236 !important;
 }
 
 @media screen and (max-width: 440px) {

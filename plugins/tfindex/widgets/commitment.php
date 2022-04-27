@@ -146,6 +146,17 @@ class TFIndex_Commitment extends Widget_Base {
             ]
         );
 
+		$repeater->add_control(
+            'image_commitment', [
+                'label' => esc_html__( 'Title', 'elementor-tfindex' ),
+            	'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
+                'label_block' => true,
+            ]
+        );
+
         $this->add_control(
             'list',
             [
@@ -190,7 +201,7 @@ class TFIndex_Commitment extends Widget_Base {
             <div class="tfindex-widget tfindex-widget-commitment">
                 <div class="commitment ast-container">
                     <div class="ast-row">
-                        <div class="ast-col-md-6 swiper commitment-swiper-thumb">
+                        <div class="ast-col-md-5 swiper commitment-swiper-thumb">
                             <div class="swiper-wrapper">
                                 <?php foreach ( $arr as $item ): ?>
                                     <div class="item swiper-slide">
@@ -203,12 +214,13 @@ class TFIndex_Commitment extends Widget_Base {
                                 <?php endforeach; ?>
                             </div>
                         </div>
-                        <div class="ast-col-md-6 swiper commitment-swiper-content">
+                        <div class="ast-col-md-7 swiper commitment-swiper-content">
                             <div class="swiper-wrapper">
                                 <?php foreach ( $arr as $item ): ?>
                                     <div class="item swiper-slide">
                                         <div class="content">
-                                            <div class=class="elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">
+										<!-- <img src="<?php echo $item['image_commitment']['url']?>" /> -->
+                                            <div class=" elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">
                                                 <?php echo $item['list_content']; ?>
                                             </div>
                                         </div>

@@ -795,6 +795,14 @@ input#tfindex-event:hover {
     .tfindex-widget .swiper.commitment-swiper-thumb .item {
         font-size: 14px;
     }
+
+    .site-primary-footer-wrap .site-footer-primary-section-2 {
+        margin-left: 0px;
+    }
+
+    .site-primary-footer-wrap .site-footer-primary-section-3 {
+        margin-left: 0px;
+    }
 }
 
 /* Staff */

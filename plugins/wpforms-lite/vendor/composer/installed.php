@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd8b14ead883dfa0c430a67b3b6eec1583104e3d4',
+        'reference' => '55c85b802c0855e8ef87aa4b20f444c4336da80a',
         'name' => 'awesomemotive/wpforms',
         'dev' => true,
     ),
@@ -16,18 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd8b14ead883dfa0c430a67b3b6eec1583104e3d4',
-            'dev_requirement' => false,
-        ),
-        'goodby/csv' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../goodby/csv',
-            'aliases' => array(
-                0 => '9999999-dev',
-            ),
-            'reference' => '0fb8031424b4450638d01f8f1db04fd5d7e28474',
+            'reference' => '55c85b802c0855e8ef87aa4b20f444c4336da80a',
             'dev_requirement' => false,
         ),
         'mk-j/php_xlsxwriter' => array(

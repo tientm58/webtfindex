@@ -176,8 +176,10 @@ class TFIndex_QAs extends Widget_Base {
 //            var_dump($post);
             $arr[] = array(
                 'id'       	=> $post->ID,
-                'question'		=> get_field('question', $post->ID),
-                'answer'		=> get_field('answer', $post->ID),
+//                'question'		=> get_field('question', $post->ID),
+//                'answer'		=> get_field('answer', $post->ID),
+                'question'		=> $post->post_title,
+                'answer'		=> $post->post_content,
             );
         endforeach;
 
@@ -186,21 +188,12 @@ class TFIndex_QAs extends Widget_Base {
         ?>
 
         <div class="tfindex-widget tfindex-widget-qas">
-            <div class="qas">
+            <div class="qas tabs">
                 <?php foreach ( $arr as $el ): ?>
-                    <div class="qas-item">
-                        <div class="accordion">
-                            <div class="question-icon">Q</div>
-                            <div class="question">
-                                <?php echo $el['question']; ?>
-                            </div>
-                        </div>
-                        <div class="answer panel">
-                            <div class="answer-icon">A</div>
-                            <div class="answer">
-                                <?php echo $el['answer']; ?>
-                            </div>
-                        </div>
+                    <div class="qas-item tab">
+                        <input type="radio" id="<?php echo 'qa-' . $el['id']; ?>" name="rd">
+                        <label class="tab-label" for="<?php echo 'qa-' . $el['id']; ?>"><?php echo $el['question']; ?></label>
+                        <div class="tab-content"><?php echo $el['answer']; ?></div>
                     </div>
                 <?php endforeach; ?>
             </div>

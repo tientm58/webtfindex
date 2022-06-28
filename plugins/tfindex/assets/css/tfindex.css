@@ -999,20 +999,22 @@ input#tfindex-event:hover {
 
 .tfindex-widget-qas .tab {
     width: 100%;
-    color: white;
+    color: #355580;
     overflow: hidden;
 }
 .tfindex-widget-qas .tab-label {
     display: flex;
     /*justify-content: space-between;*/
     padding: 1em;
-    background: #2c3e50;
+    /*background: #2c3e50;*/
+    background: transparent;
     font-weight: bold;
     cursor: pointer;
     /* Icon */
 }
 .tfindex-widget-qas .tab-label:hover {
-    background: #1a252f;
+    /*background: #1a252f;*/
+    background: transparent;
 }
 .tfindex-widget-qas .tab-label::before {
     content: "+";
@@ -1020,6 +1022,10 @@ input#tfindex-event:hover {
     height: 1em;
     text-align: center;
     transition: all 0.35s;
+    color: #F5B236;
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 700;
 }
 .tfindex-widget-qas .tab-content {
     max-height: 0;

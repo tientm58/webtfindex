@@ -153,14 +153,14 @@ class FileManager
        if( class_exists( 'NestedPages' ) ) {
             $this->fmCapability = 'read';
        }
-        
+        $icon = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEwLDRINEMyLjg5LDQgMiw0Ljg5IDIsNlYxOEEyLDIgMCAwLDAgNCwyMEgyMEEyLDIgMCAwLDAgMjIsMThWOEMyMiw2Ljg5IDIxLjEsNiAyMCw2SDEyTDEwLDRaIiBmaWxsPSIjYTdhYWFkIi8+PC9zdmc+';
         $display_suffix = add_menu_page(
             __('Filester', 'textdomain'),
             'File Manager',
             $this->fmCapability,
             'njt-fs-filemanager',
             array($this, 'fsViewFileCallback'),
-            '',
+            $icon,
             9
         );
         
@@ -189,9 +189,6 @@ class FileManager
 
     public function enqueueAdminScripts($suffix)
     {
-        wp_register_style('file_manager_icon_css',NJT_FS_BN_PLUGIN_URL . 'assets/css/style-icon.css');
-        wp_enqueue_style('file_manager_icon_css');
-
         if (in_array($suffix, $this->hook_suffix)) {
             $selectorThemes = get_option('njt_fs_selector_themes');
             if (empty($selectorThemes[$this->userRole])) {
@@ -258,6 +255,7 @@ class FileManager
             'bind' => array(
                 'put.pre' => array(new \FileManagerHelper, 'madeStripcslashesFile'), // Check endcode when save file.
             ),
+            'debug' => false, 
             'roots' => array(
                 array(
                     'driver' => 'LocalFileSystem',

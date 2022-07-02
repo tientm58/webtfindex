@@ -35,8 +35,8 @@ if ( ! function_exists('question_answer_post_type') ) {
             'filter_items_list'     => __( 'Filter items list', 'tfindex' ),
         );
         $args = array(
-            'label'                 => __( 'Staff', 'tfindex' ),
-            'description'           => __( 'What client say?', 'tfindex' ),
+            'label'                 => __( 'QA', 'tfindex' ),
+            'description'           => __( '', 'tfindex' ),
             'labels'                => $labels,
             'supports'              => array( 'title', 'editor', 'custom-fields', 'thumbnail' ),
 //			'taxonomies'            => array( 'category', 'post_tag' ),

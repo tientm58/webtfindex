@@ -225,6 +225,12 @@
     max-width: 14%;
   }
 }
+@media only screen and (min-width: 2500px){
+
+  .njt-fs-list-user.njt-settting-width {
+    width: 50% !important;
+  }
+}
 
 .button-primary.njt-fs-updating-message::after{
   color: #e10909;

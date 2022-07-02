@@ -2,7 +2,7 @@
 Contributors: ninjateam
 Tags: file manager, wordpress file manager, wp file manager, file manager pro, document management, real media library, wp media manager, wp media manager
 Requires at least: 3.0
-Tested up to: 5.9
+Tested up to: 6.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -102,6 +102,14 @@ Otherwise, feel free to reach us at [Ninja Team Support Center](https://ninjatea
 4. Top free file manager plugins comparison chart
 
 == Changelog ==
+
+= 1.7.6 =
+Jun 27, 2022 - Version 1.7.6
+- Fixed: Warning: init_set() error
+
+= 1.7.5 =
+Jun 20, 2022 - Version 1.7.5
+- Added: Recommend plugins
 
 = 1.7.4 =
 Dec 02, 2021 - Version 1.7.4

@@ -1064,3 +1064,28 @@ input#tfindex-event:hover {
     border-left: solid 3px #F5B236;
     margin: 30px 30px 30px 45px;
 }
+
+/* Thuyen */
+
+.thuyen .content {
+    width: 100%;
+}
+
+.element-thuyen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.thuyen .content-block {
+    background: linear-gradient(155.83deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.15) 98.56%);
+    box-shadow: 0px 2px 20px rgb(53 85 138 / 15%);
+    backdrop-filter: blur(4px);
+    border-radius: 15px;
+    /*border: solid 1px;*/
+    padding: 40px;
+}
+
+.thuyen div {
+    color: #fff;
+}

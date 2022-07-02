@@ -1067,8 +1067,34 @@ input#tfindex-event:hover {
 
 /* Thuyen */
 
+.thuyen-widget .tab {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.thuyen-widget .tab button {
+    background: unset;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    padding: 15px 40px;
+    border-radius: 0;
+}
+
+.thuyen-widget .tab button.active {
+    border-bottom: solid 3px #F5B236;
+}
+
 .thuyen .content {
     width: 100%;
+    padding: 60px 0;
+}
+
+.thuyen-text {
+    color: #fff;
+    max-width: 75%;
+    margin: auto;
 }
 
 .element-thuyen {
@@ -1084,8 +1110,64 @@ input#tfindex-event:hover {
     border-radius: 15px;
     /*border: solid 1px;*/
     padding: 40px;
+    position: relative;
+}
+
+.thuyen .content-block:before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    background: linear-gradient(180deg, #F5B236 30.21%, #F2994A 100%);
+    box-shadow: 0px 2px 20px rgba(53, 85, 138, 0.15);
+    backdrop-filter: blur(4px);
+    border-radius: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.thuyen .content-block:after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    z-index: 9;
+    background: url(../images/yacht.png);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .thuyen div {
     color: #fff;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 3;
+}
+
+.thuyen .text.small {
+    margin-top: -22px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.tfindex-widget .thuyen .modal-content {
+    background: #fff;
+}
+
+.tfindex-widget .thuyen label {
+    font-weight: 600;
+    color: #62615c;
+    display: block;
+    width: 100%;
+}
+
+#tfindex-thuyen-form-popup .tfindex-form-events {
+    padding: 30px;
+}
+
+#tfindex-thuyen-form-popup input {
+    border-radius: 30px;
+    width: 100%;
 }

@@ -163,11 +163,6 @@
 			loop: true,
 			slidesPerView: 1,
 			spaceBetween: 30,
-			// direction: getDirection(),
-			// navigation: {
-			// 	nextEl: '.swiper-button-next',
-			// 	prevEl: '.swiper-button-prev',
-			// },
 			breakpoints: {
 				730: {
 					slidesPerView: 2,
@@ -195,7 +190,7 @@
 			modal.hide();
 		}
 
-		$('.tftalk-swiper .tfindex-register').on('click', function (e) {
+		$('.thuyen-swiper .tfindex-register').on('click', function (e) {
 			const eventName = $(this).data("event");
 			const tfindexEvent = $('#tfindex-event');
 			tfindexEvent.val(eventName);
@@ -220,6 +215,23 @@
 					modal.hide();
 				});
 			});
+		});
+
+		$('.thuyen-widget .tablinks').on('click', function (e) {
+			// Declare all variables
+			let i, tabcontent, tablinks;
+
+			// Get all elements with class="tabcontent" and hide them
+			// tabcontent = document.getElementsByClassName("tabcontent");
+			// for (i = 0; i < tabcontent.length; i++) {
+			// 	tabcontent[i].style.display = "none";
+			// }
+
+			// Get all elements with class="tablinks" and remove the class "active"
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
 		});
 	};
 

@@ -106,8 +106,18 @@ class TFIndex_Thuyen extends Widget_Base {
 			]
 		);
 
+        $this->add_control(
+            'text',
+            [
+                'label' => __( 'Text', 'elementor-tfindex' ),
+                'type' => Controls_Manager::WYSIWYG,
+                'default' => esc_html__( 'Default description', 'elementor-tfindex' ),
+                'placeholder' => esc_html__( 'Type your description here', 'elementor-tfindex' ),
+            ]
+        );
+
 		$this->add_control(
-			'tfindex',
+			'thuyen',
 			[
 				'label' => __( 'Thuyen style', 'elementor-thuyen' ),
                 'type' => Controls_Manager::NUMBER,
@@ -131,6 +141,7 @@ class TFIndex_Thuyen extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
+        $text = $settings['text'];
         $numberOfPost = $settings['thuyen'];
 
         $arr = [];
@@ -161,6 +172,16 @@ class TFIndex_Thuyen extends Widget_Base {
         ?>
 
         <div class="tfindex-widget thuyen-widget thuyen-widget-thuyen">
+            <!-- Tab links -->
+            <div class="tab">
+                <button class="tablinks active" onclick="return false;">Thuyền TFSTOCK</button>
+                <button class="tablinks" onclick="return false;">Chiến lược đầu tư</button>
+            </div>
+
+
+            <div class="thuyen-text">
+                <?php echo $text; ?>
+            </div>
             <div class="thuyen">
                 <div class="row">
                     <div class="tfindex-swiper-control">
@@ -177,31 +198,26 @@ class TFIndex_Thuyen extends Widget_Base {
                                                 <div class="content-row">
                                                     <div class="title"><?php echo $el['post_name']; ?></div>
                                                     <div class="element-thuyen">
-                                                        <div class="time-text">Ngày khởi hành</div>
+                                                        <div class="text">Ngày khởi hành</div>
                                                         <div class="type"><?php echo $el['start']; ?></div>
                                                     </div>
                                                     <div class="element-thuyen">
-                                                        <div class="type-text">Ngày kết thúc</div>
+                                                        <div class="text">Ngày kết thúc</div>
                                                         <div class="type"><?php echo $el['end']; ?></div>
                                                     </div>
                                                     <div class="element-thuyen">
-                                                        <div class="type-text">Doanh nghiệp</div>
+                                                        <div class="text">Doanh nghiệp</div>
                                                         <div class="type"><img src="<?php echo $el['company']; ?>" alt=""></div>
                                                     </div>
                                                     <div class="element-thuyen">
-                                                        <div class="fee-text">Lợi nhuận hiện tại</div>
-                                                        <div class="fee"><?php echo $el['profit']; ?>%</div>
+                                                        <div class="text">Lợi nhuận hiện tại</div>
+                                                        <div class="type"><?php echo $el['profit']; ?>%</div>
                                                     </div>
-                                                    <div class="element-thuyen">
-                                                        <div class="fee-text">Cập nhật đến</div>
-                                                        <div class="fee"><?php echo str_replace('/', '-', explode(" ", $el['update'])[0]) ?></div>
-                                                    </div>
+                                                    <div class="text small">Cập nhật đến <?php echo str_replace('/', '-', explode(" ", $el['update'])[0]) ?></div>
                                                 </div>
                                             </div>
                                             <div class="view-more tfindex-register" data-event="<?php echo $el['post_name']; ?>">
-                                                <div class="btn btn-primary">
-                                                    <a class="btn-link" href="#" onclick='return false;'>Xem báo cáo</a>
-                                                </div>
+                                                <a class="btn-link" href="#" onclick='return false;'>Xem báo cáo</a>
                                             </div>
                                         </div>
                                     </div>
@@ -221,7 +237,7 @@ class TFIndex_Thuyen extends Widget_Base {
                         </div>
                         <div class="modal-body">
                             <div class="tfindex-form-events">
-                                <h3 class="title-center">Đăng ký tham gia sự kiện</h3>
+                                <h3 class="title-center">Đăng ký nhận thông báo</h3>
                                 <form id="tfindex-form-events" class="needs-validation">
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3">

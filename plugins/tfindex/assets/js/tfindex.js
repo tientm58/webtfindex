@@ -158,6 +158,83 @@
 		});
 	};
 
+	let WidgetThuyenHandler = function( $scope, $ ) {
+		new Swiper('.thuyen-swiper', {
+			loop: true,
+			slidesPerView: 1,
+			spaceBetween: 30,
+			breakpoints: {
+				730: {
+					slidesPerView: 2,
+				},
+				1024: {
+					slidesPerView: 3,
+					spaceBetween: 30,
+				},
+			},
+			navigation: {
+				nextEl: '.slide-arrow-right',
+				prevEl: '.slide-arrow-left',
+			},
+			on: {
+				// resize: function () {
+				// 	tftalkSwiper.changeDirection(getDirection());
+				// },
+			},
+		});
+
+		let modal = $("#tfindex-thuyen-form-popup");
+		let closeBtn = $(".close")[0];
+
+		closeBtn.onclick = function() {
+			modal.hide();
+		}
+
+		$('.thuyen-swiper .tfindex-register').on('click', function (e) {
+			const eventName = $(this).data("event");
+			const tfindexEvent = $('#tfindex-event');
+			tfindexEvent.val(eventName);
+			tfindexEvent.prop( "disabled", true );
+			modal.show();
+
+			$( "#tfindex-form-events" ).submit(function( event ) {
+				event.preventDefault();
+				const url = 'https://script.google.com/macros/s/AKfycbxbE12PumehGNulS71v1yk8qxFauYJ92tDPNbtxK-MqdvrsIguUagzk5PGy6mKgoQOM/exec';
+				const data = {
+					event: eventName,
+					name: $('#tfindex-register-name').val(),
+					email: $('#tfindex-register-email').val(),
+					phone: $('#tfindex-register-phone').val(),
+				};
+				$.ajax({
+					url: url,
+					method: "GET",
+					dataType: "json",
+					data: data
+				}).done(function() {
+					modal.hide();
+				});
+			});
+		});
+
+		$('.thuyen-widget .tablinks').on('click', function (e) {
+			// Declare all variables
+			let i, tabcontent, tablinks;
+
+			// Get all elements with class="tabcontent" and hide them
+			// tabcontent = document.getElementsByClassName("tabcontent");
+			// for (i = 0; i < tabcontent.length; i++) {
+			// 	tabcontent[i].style.display = "none";
+			// }
+
+			// Get all elements with class="tablinks" and remove the class "active"
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+		});
+	};
+
 	let WidgetChartHandler = function( $scope, $ ) {
 		let chartNumOfSlides = 1;
 		let chartSlidesPerView = 3;
@@ -343,6 +420,7 @@
 	$( window ).on( 'elementor/frontend/init', function() {
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/tfindex.default', WidgetTFindexHandler );
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/tftalk.default', WidgetTFTalkHandler );
+		elementorFrontend.hooks.addAction( 'frontend/element_ready/thuyen.default', WidgetThuyenHandler );
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/chart.default', WidgetChartHandler );
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/testimonials.default', WidgetTestimonialsHandler );
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/staff.default', WidgetStaffHandler );

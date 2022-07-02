@@ -1,5 +1,7 @@
 <?php
 
+use WPForms\Forms\Locator;
+
 /**
  * Generate the table on the plugin overview page.
  *
@@ -60,6 +62,22 @@ class WPForms_Overview_Table extends WP_List_Table {
 	}
 
 	/**
+	 * Get the instance of a class and store it in itself.
+	 *
+	 * @since 1.7.5
+	 */
+	public static function get_instance() {
+
+		static $instance;
+
+		if ( ! $instance ) {
+			$instance = new self();
+		}
+
+		return $instance;
+	}
+
+	/**
 	 * Retrieve the table columns.
 	 *
 	 * @since 1.0.0
@@ -71,6 +89,7 @@ class WPForms_Overview_Table extends WP_List_Table {
 		$columns = [
 			'cb'        => '<input type="checkbox" />',
 			'name'      => esc_html__( 'Name', 'wpforms-lite' ),
+			'tags'      => esc_html__( 'Tags', 'wpforms-lite' ),
 			'author'    => esc_html__( 'Author', 'wpforms-lite' ),
 			'shortcode' => esc_html__( 'Shortcode', 'wpforms-lite' ),
 			'created'   => esc_html__( 'Created', 'wpforms-lite' ),
@@ -156,6 +175,8 @@ class WPForms_Overview_Table extends WP_List_Table {
 	 *
 	 * @param string[]  $hidden Array of IDs of columns hidden by default.
 	 * @param WP_Screen $screen WP_Screen object of the current screen.
+	 *
+	 * @return string[]
 	 */
 	public function default_hidden_columns( $hidden, $screen ) {
 
@@ -163,7 +184,11 @@ class WPForms_Overview_Table extends WP_List_Table {
 			return $hidden;
 		}
 
-		return [ 'author' ];
+		return [
+			'tags',
+			'author',
+			Locator::COLUMN_NAME,
+		];
 	}
 
 	/**
@@ -179,6 +204,20 @@ class WPForms_Overview_Table extends WP_List_Table {
 
 		// Build the row action links and return the value.
 		return $this->get_column_name_title( $form ) . $this->get_column_name_row_actions( $form );
+	}
+
+	/**
+	 * Render the form tags column.
+	 *
+	 * @since 1.7.5
+	 *
+	 * @param WP_Post $form Form.
+	 *
+	 * @return string
+	 */
+	public function column_tags( $form ) {
+
+		return wpforms()->get( 'forms_tags' )->column_tags( $form );
 	}
 
 	/**
@@ -261,7 +300,7 @@ class WPForms_Overview_Table extends WP_List_Table {
 
 		// phpcs:disable WPForms.Comments.PHPDocHooks.RequiredHookDocumentation, WPForms.PHP.ValidateHooks.InvalidHookName
 
-		/*
+		/**
 		 * Filters row action links on the 'All Forms' admin page.
 		 *
 		 * @since 1.0.0
@@ -271,7 +310,7 @@ class WPForms_Overview_Table extends WP_List_Table {
 		 */
 		return $this->row_actions( apply_filters( 'wpforms_overview_row_actions', [], $form ) );
 
-        // phpcs:enable
+		// phpcs:enable
 	}
 
 	/**
@@ -309,6 +348,8 @@ class WPForms_Overview_Table extends WP_List_Table {
 				<?php $this->bulk_actions( $which ); ?>
 			</div>
 			<?php
+			$this->extra_tablenav( $which );
+
 			if ( $which === 'top' ) {
 				$this->pagination( $which );
 			}
@@ -327,6 +368,7 @@ class WPForms_Overview_Table extends WP_List_Table {
 	 */
 	protected function extra_tablenav( $which ) {
 
+		wpforms()->get( 'forms_tags' )->extra_tablenav( $which, $this );
 		wpforms()->get( 'forms_views' )->extra_tablenav( $which );
 	}
 
@@ -418,7 +460,7 @@ class WPForms_Overview_Table extends WP_List_Table {
 
 		/**
 		 * Allow counting forms filtered by a given search criteria.
-         *
+		 *
 		 * If result will not contain `all` key, count All Forms without filtering will be performed.
 		 *
 		 * @since 1.7.2

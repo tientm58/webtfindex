@@ -155,7 +155,7 @@ class Preview {
 							'view'    => 'fields',
 							'form_id' => absint( $this->form_data['id'] ),
 						],
-				 		admin_url( 'admin.php' )
+						admin_url( 'admin.php' )
 					)
 				),
 				'text' => esc_html__( 'Edit Form', 'wpforms-lite' ),
@@ -186,10 +186,11 @@ class Preview {
 		}
 
 		$content  = '<p>';
-		$content .= esc_html__( 'This is a preview of your form. This page is not publicly accessible.', 'wpforms-lite' );
+		$content .= esc_html__( 'This is a preview of the latest saved revision of your form. If this preview does not match your form, save your changes and then refresh this page. This form preview is not publicly accessible.', 'wpforms-lite' );
 
 		if ( ! empty( $links ) ) {
 			$content .= '<br>';
+			$content .= '<span class="wpforms-preview-notice-links">';
 
 			foreach ( $links as $key => $link ) {
 				$content .= '<a href="' . $link['url'] . '">' . $link['text'] . '</a>';
@@ -199,6 +200,8 @@ class Preview {
 					$content .= ' <span style="display:inline-block;margin:0 6px;opacity: 0.5">|</span> ';
 				}
 			}
+
+			$content .= '</span>';
 		}
 		$content .= '</p>';
 
@@ -238,18 +241,18 @@ class Preview {
 		return [ 'page.php', 'single.php', 'index.php' ];
 	}
 
-    /**
-     * Force page template types.
-     *
-     * @since 1.5.1
-     * @deprecated 1.7.2
-     *
-     * @return string
-     */
-    public function template_include() {
+	/**
+	 * Force page template types.
+	 *
+	 * @since 1.5.1
+	 * @deprecated 1.7.2
+	 *
+	 * @return string
+	 */
+	public function template_include() {
 
-        _deprecated_function( __METHOD__, '1.7.2 of WPForms plugin' );
+		_deprecated_function( __METHOD__, '1.7.2 of WPForms plugin' );
 
-        return locate_template( [ 'page.php', 'single.php', 'index.php' ] );
-    }
+		return locate_template( [ 'page.php', 'single.php', 'index.php' ] );
+	}
 }

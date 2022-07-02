@@ -436,15 +436,17 @@ class WPForms_Process {
 		$_POST['wpforms']['entry_id'] = $this->entry_id;
 
 		// Logs entry depending on log levels set.
-		wpforms_log(
-			$this->entry_id ? "Entry {$this->entry_id}" : 'Entry',
-			$this->fields,
-			array(
-				'type'    => array( 'entry' ),
-				'parent'  => $this->entry_id,
-				'form_id' => $this->form_data['id'],
-			)
-		);
+		if ( wpforms()->is_pro() ) {
+			wpforms_log(
+				$this->entry_id ? "Entry {$this->entry_id}" : 'Entry',
+				$this->fields,
+				[
+					'type'    => [ 'entry' ],
+					'parent'  => $this->entry_id,
+					'form_id' => $this->form_data['id'],
+				]
+			);
+		}
 
 		// Post-process hooks.
 		do_action( 'wpforms_process_complete', $this->fields, $entry, $this->form_data, $this->entry_id );
@@ -607,7 +609,21 @@ class WPForms_Process {
 				continue;
 			}
 
-			$process_confirmation = apply_filters( 'wpforms_entry_confirmation_process', true, $this->fields, $form_data, $confirmation_id );
+			// phpcs:disable WPForms.PHP.ValidateHooks.InvalidHookName
+
+			/**
+			 * Process confirmation filter.
+			 *
+			 * @since 1.4.8
+			 *
+			 * @param bool  $process   Whether to process the logic or not.
+			 * @param array $fields    List of submitted fields.
+			 * @param array $form_data Form data and settings.
+			 * @param int   $id        Confirmation ID.
+			 */
+			$process_confirmation = apply_filters( 'wpforms_entry_confirmation_process', true, $this->fields, $this->form_data, $confirmation_id );
+			// phpcs:enable WPForms.PHP.ValidateHooks.InvalidHookName
+
 			if ( $process_confirmation ) {
 				break;
 			}
@@ -729,7 +745,7 @@ class WPForms_Process {
 
 		$error_msg  = esc_html__( 'Form has not been submitted, please see the errors below.', 'wpforms-lite' );
 		$error_msg .= '<br>' . sprintf( /* translators: %1$.3f - the total size of the selected files in megabytes, %2$.3f - allowed file upload limit in megabytes.*/
-			esc_html__( 'The total size of the selected files %1$.3f Mb exceeds the allowed limit %2$.3f Mb.', 'wpforms-lite' ),
+			esc_html__( 'The total size of the selected files %1$.3f MB exceeds the allowed limit %2$.3f MB.', 'wpforms-lite' ),
 			esc_html( $total_size / 1048576 ),
 			esc_html( $post_max_size / 1048576 )
 		);

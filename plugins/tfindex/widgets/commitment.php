@@ -148,7 +148,7 @@ class TFIndex_Commitment extends Widget_Base {
 
 		$repeater->add_control(
             'image_commitment', [
-                'label' => esc_html__( 'Title', 'elementor-tfindex' ),
+                'label' => esc_html__( 'Image', 'elementor-tfindex' ),
             	'type' => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -219,8 +219,13 @@ class TFIndex_Commitment extends Widget_Base {
                                 <?php foreach ( $arr as $item ): ?>
                                     <div class="item swiper-slide">
                                         <div class="content">
-										<!-- <img src="<?php echo $item['image_commitment']['url']?>" /> -->
-                                            <div class=" elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">
+                                            <div class="commitment-img-block">
+                                                <div class="commitment-img">
+                                                    <img src="<?php echo $item['image_commitment']['url']?>" />
+                                                </div>
+                                            </div>
+
+                                            <div class="commitment-text elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">
                                                 <?php echo $item['list_content']; ?>
                                             </div>
                                         </div>

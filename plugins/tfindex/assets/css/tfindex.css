@@ -765,7 +765,9 @@ input#tfindex-event:hover {
 }
 
 .tfindex-widget .swiper.commitment-swiper-content {
-    max-height: 300px;
+    /*max-height: 300px;*/
+    max-height: 600px;
+    margin-top: -300px;
 }
 
 .tfindex-widget .swiper.commitment-swiper-content .item .content {
@@ -774,11 +776,31 @@ input#tfindex-event:hover {
     line-height: 24px;
     color: #4F4F4F;
 
+    /*padding: 30px;*/
+    /*background: #F2F2F2;*/
+    /*box-shadow: 0 2px 40px rgba(245, 179, 54, 0.15);*/
+    /*backdrop-filter: blur(4px);*/
+    /*border-radius: 15px;*/
+}
+
+.tfindex-widget .swiper.commitment-swiper-content .item .commitment-text {
     padding: 30px;
     background: #F2F2F2;
     box-shadow: 0 2px 40px rgba(245, 179, 54, 0.15);
     backdrop-filter: blur(4px);
     border-radius: 15px;
+    margin-top: -100px;
+    margin-right: 100px;
+}
+
+.tfindex-widget .commitment-img-block {
+    text-align: right;
+}
+
+.tfindex-widget .commitment-img {
+    border-radius: 15px;
+    overflow: hidden;
+    display: inline-block;
 }
 
 .tfindex-widget .swiper.commitment-swiper-content .elementor-image-commitment {

@@ -291,7 +291,7 @@ class TFIndex_Thuyen extends Widget_Base {
                                     <form id="tfindex-form-events" class="needs-validation">
                                         <div class="form-row">
                                             <div class="col-md-4 mb-3">
-                                                <label for="tfindex-event">Sự kiện</label>
+                                                <label for="tfindex-event">Báo cáo</label>
                                                 <input type="text" class="form-control" id="tfindex-event" placeholder="Sự kiện" value="" required>
                                             </div>
                                         </div>

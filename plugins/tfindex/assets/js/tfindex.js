@@ -199,19 +199,20 @@
 
 			$( "#tfindex-form-events" ).submit(function( event ) {
 				event.preventDefault();
-				const url = 'https://script.google.com/macros/s/AKfycbxbE12PumehGNulS71v1yk8qxFauYJ92tDPNbtxK-MqdvrsIguUagzk5PGy6mKgoQOM/exec';
+				const url = 'https://script.google.com/macros/s/AKfycbylwfF1kC605XnVNIa3ioUEC5oz_PF2r6QPfw7Thjk7IjZo6L_3Bf3MdcDI2RJ91xk1VA/exec';
 				const data = {
-					event: eventName,
+					report: eventName,
 					name: $('#tfindex-register-name').val(),
 					email: $('#tfindex-register-email').val(),
 					phone: $('#tfindex-register-phone').val(),
 				};
+				console.log(data)
 				$.ajax({
 					url: url,
 					method: "GET",
 					dataType: "json",
 					data: data
-				}).done(function() {
+				}).done(function(e) {
 					modal.hide();
 				});
 			});

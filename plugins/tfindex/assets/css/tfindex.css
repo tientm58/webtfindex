@@ -770,6 +770,12 @@ input#tfindex-event:hover {
     margin-top: -300px;
 }
 
+@media screen and (max-width: 440px) {
+    .tfindex-widget .swiper.commitment-swiper-content {
+        margin-top: 0;
+    }
+}
+
 .tfindex-widget .swiper.commitment-swiper-content .item .content {
     font-weight: 400;
     font-size: 17px;

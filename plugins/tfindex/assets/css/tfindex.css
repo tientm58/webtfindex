@@ -807,11 +807,21 @@ input#tfindex-event:hover {
     z-index: -1;
 }
 
-.tfindex-widget-commitment .swiper-slide-active {
-    font-weight: 600 !important;
-    line-height: 24px !important;
-    color: #F5B236 !important;
+.tfindex-widget-commitment .item.swiper-slide:hover {
+    cursor: pointer;
 }
+
+.tfindex-widget-commitment .swiper-slide-active {
+    /*font-weight: 600 !important;*/
+    line-height: 24px !important;
+    /*color: #F5B236 !important;*/
+}
+
+.tfindex-widget-commitment .swiper-slide-thumb-active.swiper-slide-visible {
+    color: #F5B236 !important;
+    font-weight: 600 !important;
+}
+
 
 @media screen and (max-width: 440px) {
     .tfindex-widget .swiper.commitment-swiper-thumb .item {

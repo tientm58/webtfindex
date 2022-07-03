@@ -169,11 +169,26 @@ class TFIndex_Thuyen extends Widget_Base {
 
         wp_reset_postdata();
 
+        function interest_rate($money, $year, $percent, $newMoney = 0) {
+            // (((36*105% + 36) * 105%) + 36)*105%
+            if ($year == 0) return 0;
+            $newMoney = (($money * 12 + $newMoney) * (100 + $percent)) / 100;
+            if ($year == 1) return $newMoney;
+            return interest_rate($money, $year - 1, $percent, $newMoney);
+        }
+
+//        echo interest_rate(3, 3, 5);
+
         function flatten_arr(array $array) {
             $return = array();
             array_walk_recursive($array, function($a) use (&$return) { $return[] = $a; });
             return $return;
         }
+
+        $years = get_field('years', 'option');
+        $percents = get_field('percents', 'option');
+        $money = get_field('money', 'option');
+        $industry = get_field('industry', 'option');
 
         ?>
 
@@ -233,6 +248,36 @@ class TFIndex_Thuyen extends Widget_Base {
                         </div>
                     </div>
 
+                    <div class="ast-row">
+                        <div class="content">
+                            <div class="heading">
+                                <h3>Bảng minh họa dòng tiền</h3>
+                                <div class="small">Với số tiền tích lũy: <?php echo number_format($money,  0, ',', '.'); ?> Đ/Tháng, đơn vị tính: VNĐ</div>
+                            </div>
+                            <div class="content-area">
+                                <table>
+                                    <tr>
+                                        <th style="max-width: 100px" rowspan="2">LỢI NHUẬN KỲ VỌNG HÀNG NĂM</th>
+                                        <th colspan="<?php echo sizeof($years); ?>">SỐ NĂM TÍCH LUỸ TÀI SẢN (KHÔNG RÚT RA GIỮA KỲ)</th>
+                                    </tr>
+                                    <tr>
+                                        <?php foreach ($years as $item) {?>
+                                            <th><?php echo $item['year']; ?> Năm</th>
+                                        <?php } ?>
+                                    </tr>
+                                    <?php foreach ($percents as $item) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $item['percent']; ?>%</td>
+                                            <?php foreach ($years as $year) {?>
+                                                <td><?php echo number_format(interest_rate($money, $year['year'], $item['percent']), 0, ',', '.'); ?></td>
+                                            <?php } ?>
+                                        </tr>
+                                    <?php } ?>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                     <!-- The Modal -->
                     <div id="tfindex-thuyen-form-popup" class="modal">
                         <!-- Modal content -->
@@ -277,9 +322,6 @@ class TFIndex_Thuyen extends Widget_Base {
                     <div class="ast-row">
                         <div class="ast-col-xs-12 ast-col-md-6">
                             <div class="title">Top cổ phiếu đầu ngành</div>
-                            <?php
-                                $industry = get_field('industry', 'option');
-                            ?>
                             <table>
                                 <tr>
                                     <th>Ngành</th>

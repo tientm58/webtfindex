@@ -190,7 +190,7 @@
 			modal.hide();
 		}
 
-		$('.thuyen-swiper .tfindex-register').on('click', function (e) {
+		$('.top-co-phieu-report').on('click', function (e) {
 			const eventName = $(this).data("event");
 			const tfindexEvent = $('#tfindex-event');
 			tfindexEvent.val(eventName);
@@ -206,7 +206,6 @@
 					email: $('#tfindex-register-email').val(),
 					phone: $('#tfindex-register-phone').val(),
 				};
-				console.log(data)
 				$.ajax({
 					url: url,
 					method: "GET",

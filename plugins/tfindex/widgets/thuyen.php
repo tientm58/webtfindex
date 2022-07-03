@@ -238,7 +238,9 @@ class TFIndex_Thuyen extends Widget_Base {
                                                     </div>
                                                 </div>
                                                 <div class="view-more tfindex-register" data-event="<?php echo $el['post_name']; ?>">
-                                                    <a class="btn-link" href="#" onclick='return false;'>Xem báo cáo</a>
+                                                    <a class="btn-link top-co-phieu-report" href="#"
+                                                       data-event="Thuyền <?php echo $el['post_name']; ?>"
+                                                       onclick='return false;'>Xem báo cáo</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -278,43 +280,6 @@ class TFIndex_Thuyen extends Widget_Base {
                             </div>
                         </div>
                     </div>
-                    <!-- The Modal -->
-                    <div id="tfindex-thuyen-form-popup" class="modal">
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <span class="close">&times;</span>
-                            </div>
-                            <div class="modal-body">
-                                <div class="tfindex-form-events">
-                                    <h3 class="title-center">Đăng ký nhận thông báo</h3>
-                                    <form id="tfindex-form-events" class="needs-validation">
-                                        <div class="form-row">
-                                            <div class="col-md-4 mb-3">
-                                                <label for="tfindex-event">Báo cáo</label>
-                                                <input type="text" class="form-control" id="tfindex-event" placeholder="Sự kiện" value="" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-6 mb-3">
-                                                <label for="tfindex-register-name">Họ và Tên</label>
-                                                <input type="text" class="form-control" id="tfindex-register-name" placeholder="Họ và Tên" required>
-                                            </div>
-                                            <div class="col-md-3 mb-3">
-                                                <label for="tfindex-register-email">Email</label>
-                                                <input type="email" class="form-control" id="tfindex-register-email" placeholder="Email" required>
-                                            </div>
-                                            <div class="col-md-3 mb-3">
-                                                <label for="tfindex-register-phone">Số điện thoại</label>
-                                                <input type="text" class="form-control" id="tfindex-register-phone" placeholder="Số điện thoại" required minlength="10" maxlength="11">
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-primary tfindex-register-this" type="submit">Đăng ký</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="second-tab" style="display: none">
@@ -335,7 +300,11 @@ class TFIndex_Thuyen extends Widget_Base {
                                     <tr>
                                         <td><?php echo $item['name']; ?></td>
                                         <td><?php print_r($codes); ?></td>
-                                        <td style="border-right: unset;"><a href="#">Xem báo cáo</a></td>
+                                        <td style="border-right: unset;">
+                                            <a class="top-co-phieu-report"
+                                               href="#" onclick="return false;"
+                                               data-event="Ngành <?php echo $item['name']; ?>">Xem báo cáo</a>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                             </table>
@@ -368,6 +337,44 @@ class TFIndex_Thuyen extends Widget_Base {
                     </div>
                 </div>
             </div>
+
+            <div id="tfindex-thuyen-form-popup" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="tfindex-form-events">
+                            <h3 class="title-center">Đăng ký nhận thông báo</h3>
+                            <form id="tfindex-form-events" class="needs-validation">
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="tfindex-event">Báo cáo</label>
+                                        <input type="text" class="form-control" id="tfindex-event" placeholder="Sự kiện" value="" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="tfindex-register-name">Họ và Tên</label>
+                                        <input type="text" class="form-control" id="tfindex-register-name" placeholder="Họ và Tên" required>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="tfindex-register-email">Email</label>
+                                        <input type="email" class="form-control" id="tfindex-register-email" placeholder="Email" required>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="tfindex-register-phone">Số điện thoại</label>
+                                        <input type="text" class="form-control" id="tfindex-register-phone" placeholder="Số điện thoại" required minlength="10" maxlength="11">
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary tfindex-register-this" type="submit">Đăng ký</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 	<?php }
 }

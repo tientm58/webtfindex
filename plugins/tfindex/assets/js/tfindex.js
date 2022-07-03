@@ -221,17 +221,24 @@
 			// Declare all variables
 			let i, tabcontent, tablinks;
 
-			// Get all elements with class="tabcontent" and hide them
-			// tabcontent = document.getElementsByClassName("tabcontent");
-			// for (i = 0; i < tabcontent.length; i++) {
-			// 	tabcontent[i].style.display = "none";
-			// }
+			const active = e.currentTarget.getAttribute('data-value');
+			const firstTab = document.querySelector(".first-tab");
+			const secondTab = document.querySelector(".second-tab");
+
+			if (active === 'first-tab') {
+				firstTab.style.display = "block";
+				secondTab.style.display = "none";
+			} else {
+				firstTab.style.display = "none";
+				secondTab.style.display = "block";
+			}
 
 			// Get all elements with class="tablinks" and remove the class "active"
 			tablinks = document.getElementsByClassName("tablinks");
 			for (i = 0; i < tablinks.length; i++) {
 				tablinks[i].className = tablinks[i].className.replace(" active", "");
 			}
+			e.currentTarget.className += " active";
 		});
 	};
 

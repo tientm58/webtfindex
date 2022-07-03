@@ -169,99 +169,159 @@ class TFIndex_Thuyen extends Widget_Base {
 
         wp_reset_postdata();
 
+        function flatten_arr(array $array) {
+            $return = array();
+            array_walk_recursive($array, function($a) use (&$return) { $return[] = $a; });
+            return $return;
+        }
+
         ?>
 
         <div class="tfindex-widget thuyen-widget thuyen-widget-thuyen">
             <!-- Tab links -->
             <div class="tab">
-                <button class="tablinks active" onclick="return false;">Thuyền TFSTOCK</button>
-                <button class="tablinks" onclick="return false;">Chiến lược đầu tư</button>
+                <button class="tablinks active" onclick="return false;" data-value="first-tab">Thuyền TFSTOCK</button>
+                <button class="tablinks" onclick="return false;"  data-value="second-tab">Chiến lược đầu tư</button>
             </div>
 
-
-            <div class="thuyen-text">
-                <?php echo $text; ?>
-            </div>
-            <div class="thuyen">
-                <div class="row">
-                    <div class="tfindex-swiper-control">
-                        <div class="slide-arrow slide-arrow-left" tabindex="0" role="button" aria-label="Previous slide"></div>
-                        <div class="slide-arrow slide-arrow-right" tabindex="0" role="button" aria-label="Next slide"></div>
-                    </div>
-                    <div class="swiper thuyen-swiper">
-                        <div class="swiper-wrapper">
-                            <?php foreach ( $arr as $el ): ?>
-                                <div class="item swiper-slide">
-                                    <div class="content">
-                                        <div class="content-block">
-                                            <div class="content-info">
-                                                <div class="content-row">
-                                                    <div class="title"><?php echo $el['post_name']; ?></div>
-                                                    <div class="element-thuyen">
-                                                        <div class="text">Ngày khởi hành</div>
-                                                        <div class="type"><?php echo $el['start']; ?></div>
+            <div class="first-tab">
+                <div class="thuyen-text">
+                    <?php echo $text; ?>
+                </div>
+                <div class="thuyen">
+                    <div class="row">
+                        <div class="tfindex-swiper-control">
+                            <div class="slide-arrow slide-arrow-left" tabindex="0" role="button" aria-label="Previous slide"></div>
+                            <div class="slide-arrow slide-arrow-right" tabindex="0" role="button" aria-label="Next slide"></div>
+                        </div>
+                        <div class="swiper thuyen-swiper">
+                            <div class="swiper-wrapper">
+                                <?php foreach ( $arr as $el ): ?>
+                                    <div class="item swiper-slide">
+                                        <div class="content">
+                                            <div class="content-block">
+                                                <div class="content-info">
+                                                    <div class="content-row">
+                                                        <div class="title"><?php echo $el['post_name']; ?></div>
+                                                        <div class="element-thuyen">
+                                                            <div class="text">Ngày khởi hành</div>
+                                                            <div class="type"><?php echo $el['start']; ?></div>
+                                                        </div>
+                                                        <div class="element-thuyen">
+                                                            <div class="text">Ngày kết thúc</div>
+                                                            <div class="type"><?php echo $el['end']; ?></div>
+                                                        </div>
+                                                        <div class="element-thuyen">
+                                                            <div class="text">Doanh nghiệp</div>
+                                                            <div class="type"><img src="<?php echo $el['company']; ?>" alt=""></div>
+                                                        </div>
+                                                        <div class="element-thuyen">
+                                                            <div class="text">Lợi nhuận hiện tại</div>
+                                                            <div class="type"><?php echo $el['profit']; ?>%</div>
+                                                        </div>
+                                                        <div class="text small">Cập nhật đến <?php echo str_replace('/', '-', explode(" ", $el['update'])[0]) ?></div>
                                                     </div>
-                                                    <div class="element-thuyen">
-                                                        <div class="text">Ngày kết thúc</div>
-                                                        <div class="type"><?php echo $el['end']; ?></div>
-                                                    </div>
-                                                    <div class="element-thuyen">
-                                                        <div class="text">Doanh nghiệp</div>
-                                                        <div class="type"><img src="<?php echo $el['company']; ?>" alt=""></div>
-                                                    </div>
-                                                    <div class="element-thuyen">
-                                                        <div class="text">Lợi nhuận hiện tại</div>
-                                                        <div class="type"><?php echo $el['profit']; ?>%</div>
-                                                    </div>
-                                                    <div class="text small">Cập nhật đến <?php echo str_replace('/', '-', explode(" ", $el['update'])[0]) ?></div>
                                                 </div>
-                                            </div>
-                                            <div class="view-more tfindex-register" data-event="<?php echo $el['post_name']; ?>">
-                                                <a class="btn-link" href="#" onclick='return false;'>Xem báo cáo</a>
+                                                <div class="view-more tfindex-register" data-event="<?php echo $el['post_name']; ?>">
+                                                    <a class="btn-link" href="#" onclick='return false;'>Xem báo cáo</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Modal -->
+                    <div id="tfindex-thuyen-form-popup" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="close">&times;</span>
+                            </div>
+                            <div class="modal-body">
+                                <div class="tfindex-form-events">
+                                    <h3 class="title-center">Đăng ký nhận thông báo</h3>
+                                    <form id="tfindex-form-events" class="needs-validation">
+                                        <div class="form-row">
+                                            <div class="col-md-4 mb-3">
+                                                <label for="tfindex-event">Sự kiện</label>
+                                                <input type="text" class="form-control" id="tfindex-event" placeholder="Sự kiện" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="tfindex-register-name">Họ và Tên</label>
+                                                <input type="text" class="form-control" id="tfindex-register-name" placeholder="Họ và Tên" required>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <label for="tfindex-register-email">Email</label>
+                                                <input type="email" class="form-control" id="tfindex-register-email" placeholder="Email" required>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <label for="tfindex-register-phone">Số điện thoại</label>
+                                                <input type="text" class="form-control" id="tfindex-register-phone" placeholder="Số điện thoại" required minlength="10" maxlength="11">
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary tfindex-register-this" type="submit">Đăng ký</button>
+                                    </form>
                                 </div>
-                            <?php endforeach; ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-
-                <!-- The Modal -->
-                <div id="tfindex-thuyen-form-popup" class="modal">
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <span class="close">&times;</span>
+            </div>
+            <div class="second-tab" style="display: none">
+                <div class="top-co-phieu ast-container">
+                    <div class="ast-row">
+                        <div class="ast-col-xs-12 ast-col-md-6">
+                            <div class="title">Top cổ phiếu đầu ngành</div>
+                            <?php
+                                $industry = get_field('industry', 'option');
+                            ?>
+                            <table>
+                                <tr>
+                                    <th>Ngành</th>
+                                    <th>Top cổ phiếu</th>
+                                    <th style="border-right: unset;">Báo cáo phân tích</th>
+                                </tr>
+                                <?php foreach ($industry as $item) {
+                                    $codes = flatten_arr($item['codes']);
+                                    $codes = implode(', ', $codes);
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $item['name']; ?></td>
+                                        <td><?php print_r($codes); ?></td>
+                                        <td style="border-right: unset;"><a href="#">Xem báo cáo</a></td>
+                                    </tr>
+                                <?php } ?>
+                            </table>
                         </div>
-                        <div class="modal-body">
-                            <div class="tfindex-form-events">
-                                <h3 class="title-center">Đăng ký nhận thông báo</h3>
-                                <form id="tfindex-form-events" class="needs-validation">
-                                    <div class="form-row">
-                                        <div class="col-md-4 mb-3">
-                                            <label for="tfindex-event">Sự kiện</label>
-                                            <input type="text" class="form-control" id="tfindex-event" placeholder="Sự kiện" value="" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-md-6 mb-3">
-                                            <label for="tfindex-register-name">Họ và Tên</label>
-                                            <input type="text" class="form-control" id="tfindex-register-name" placeholder="Họ và Tên" required>
-                                        </div>
-                                        <div class="col-md-3 mb-3">
-                                            <label for="tfindex-register-email">Email</label>
-                                            <input type="email" class="form-control" id="tfindex-register-email" placeholder="Email" required>
-                                        </div>
-                                        <div class="col-md-3 mb-3">
-                                            <label for="tfindex-register-phone">Số điện thoại</label>
-                                            <input type="text" class="form-control" id="tfindex-register-phone" placeholder="Số điện thoại" required minlength="10" maxlength="11">
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-primary tfindex-register-this" type="submit">Đăng ký</button>
-                                </form>
-                            </div>
+                        <div class="ast-col-xs-12 ast-col-md-6">
+                            <div class="title">Top 5 cổ phiếu tăng trưởng</div>
+                            <?php
+                                $topCodes = get_field('top_codes', 'option');
+                            ?>
+                            <table>
+                                <tr>
+                                    <th>Cổ phiếu</th>
+                                    <th>Ngành</th>
+                                    <th>Giá khuyến nghị</th>
+                                    <th>Giá hiện tại</th>
+                                    <th style="border-right: unset;">Trạng thái</th>
+                                </tr>
+                                <?php foreach ($topCodes as $item) {
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $item['top_cod']; ?></td>
+                                        <td><?php echo $item['top_industry']; ?></td>
+                                        <td><?php echo $item['top_price_expected']; ?></td>
+                                        <td><?php echo $item['top_price_current']; ?></td>
+                                        <td style="border-right: unset;"><?php echo $item['top_status'] ?></td>
+                                    </tr>
+                                <?php } ?>
+                            </table>
                         </div>
                     </div>
                 </div>

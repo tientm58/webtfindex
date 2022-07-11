@@ -1276,3 +1276,66 @@ input#tfindex-event:hover {
 
     border-radius: 15px;
 }
+
+.thuyen-report-block {
+    background: linear-gradient(155.83deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.15) 98.56%);
+    box-shadow: 0px 2px 20px rgba(53, 85, 138, 0.15);
+    backdrop-filter: blur(4px);
+    border-radius: 15px;
+    padding: 15px 30px;
+    margin-bottom: 60px;
+}
+
+.pagination-content .report-thuyen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid 0.5px #fff;
+    padding-top: 15px;
+}
+
+.thuyen-report-block .report-view {
+   color: #f9c349;
+}
+
+.thuyen-report-block .report-view:hover {
+    cursor: pointer;
+}
+
+.report-thuyen .report-title h3 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    /*margin-bottom: 0;*/
+}
+
+.thuyen-report-block  .pagination-link ul {
+    list-style: none;
+    text-align: right;
+}
+
+.thuyen-report-block  .pagination-link ul li {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    color: #FFFFFF;
+    padding: 20px 20px 0 20px;
+}
+
+.thuyen-report-block  .pagination-link ul li.selected {
+    color: #f9c349;
+}
+
+.thuyen-report-block  .pagination-link ul li:hover {
+    cursor: pointer;
+}
+
+.reports h2.title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    color: #F2F2F2;
+}

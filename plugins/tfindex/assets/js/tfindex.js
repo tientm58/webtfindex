@@ -191,6 +191,7 @@
 		}
 
 		$('.top-co-phieu-report').on('click', function (e) {
+			console.log(e)
 			const eventName = $(this).data("event");
 			const tfindexEvent = $('#tfindex-event');
 			tfindexEvent.val(eventName);

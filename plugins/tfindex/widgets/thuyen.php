@@ -340,6 +340,38 @@ class TFIndex_Thuyen extends Widget_Base {
                         </div>
                     </div>
                 </div>
+
+                <div class="reports">
+                    <h2 class="title" style="text-align: center">Báo cáo phân tích</h2>
+                    <div class = "inner-box content">
+                        <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                // This is required for AJAX to work on our page
+                                var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+                                function load_all_posts(page){
+                                    var data = {
+                                        page: page,
+                                        action: "ajax_report_for_pagination"
+                                    };
+                                    // Send the data
+                                    $.post(ajaxurl, data, function(response) {
+                                        $(".pagination_container").html(response);
+                                    });
+                                }
+                                load_all_posts(1); // Load page 1 as the default
+                                $(document).on('click','.pagination-link ul li',function(){
+                                    var page = $(this).attr('p');
+                                    load_all_posts(page);
+                                });
+                            });
+                        </script>
+                        <div class = "pag_loading">
+                            <div class = "pagination_container">
+                                <div class="post-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="tfindex-thuyen-form-popup" class="modal">

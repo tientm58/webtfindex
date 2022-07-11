@@ -1105,6 +1105,31 @@ input#tfindex-event:hover {
 
 /* Thuyen */
 
+.thuyen-widget .tablinks.active {
+    color: #F5B236;
+}
+
+.thuyen-widget .table {
+    border: unset;
+}
+
+.thuyen-widget .table td {
+    border: unset;
+    text-align: center;
+}
+
+.thuyen-widget th {
+    border: unset;
+    border-bottom: solid 1px #f0f0f0;
+}
+
+.thuyen-widget .highlight {
+    color: #F5B236;
+    font-weight: 600;
+    text-align: center;
+    border-left: unset;
+}
+
 .thuyen-widget .tab {
     text-align: center;
     padding: 60px 0;

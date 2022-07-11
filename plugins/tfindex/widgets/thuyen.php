@@ -217,7 +217,11 @@ class TFIndex_Thuyen extends Widget_Base {
                                             <div class="content-block">
                                                 <div class="content-info">
                                                     <div class="content-row">
-                                                        <div class="title"><?php echo $el['post_name']; ?></div>
+<!--                                                        <div class="title">Thuyền --><?php //echo $el['post_name']; ?><!--</div>-->
+                                                        <div class="element-thuyen">
+                                                            <div class="text">Thuyền</div>
+                                                            <div class="type"><?php echo $el['post_name']; ?></div>
+                                                        </div>
                                                         <div class="element-thuyen">
                                                             <div class="text">Ngày khởi hành</div>
                                                             <div class="type"><?php echo $el['start']; ?></div>
@@ -234,10 +238,10 @@ class TFIndex_Thuyen extends Widget_Base {
                                                             <div class="text">Lợi nhuận hiện tại</div>
                                                             <div class="type"><?php echo $el['profit']; ?>%</div>
                                                         </div>
-                                                        <div class="text small">Cập nhật đến <?php echo str_replace('/', '-', explode(" ", $el['update'])[0]) ?></div>
+                                                        <div class="text small">Cập nhật đến ngày <?php echo date('d/m/Y', strtotime($el['update'])); ?></div>
                                                     </div>
                                                 </div>
-                                                <div class="view-more tfindex-register" data-event="<?php echo $el['post_name']; ?>">
+                                                <div class="view-more tfindex-register" style="text-align: center" data-event="<?php echo $el['post_name']; ?>">
                                                     <a class="btn-link top-co-phieu-report" href="#"
                                                        data-event="Thuyền <?php echo $el['post_name']; ?>"
                                                        onclick='return false;'>Xem báo cáo</a>
@@ -257,9 +261,9 @@ class TFIndex_Thuyen extends Widget_Base {
                                 <div class="small">Với số tiền tích lũy: <?php echo number_format($money,  0, ',', '.'); ?> Đ/Tháng, đơn vị tính: VNĐ</div>
                             </div>
                             <div class="content-area">
-                                <table>
+                                <table class="table">
                                     <tr>
-                                        <th style="max-width: 100px" rowspan="2">LỢI NHUẬN KỲ VỌNG HÀNG NĂM</th>
+                                        <th class="highlight" style="max-width: 100px;" rowspan="2">LỢI NHUẬN KỲ VỌNG HÀNG NĂM</th>
                                         <th colspan="<?php echo sizeof($years); ?>">SỐ NĂM TÍCH LUỸ TÀI SẢN (KHÔNG RÚT RA GIỮA KỲ)</th>
                                     </tr>
                                     <tr>
@@ -270,7 +274,7 @@ class TFIndex_Thuyen extends Widget_Base {
                                     <?php foreach ($percents as $item) {
                                         ?>
                                         <tr>
-                                            <td><?php echo $item['percent']; ?>%</td>
+                                            <td class="highlight"><?php echo $item['percent']; ?>%</td>
                                             <?php foreach ($years as $year) {?>
                                                 <td><?php echo number_format(interest_rate($money, $year['year'], $item['percent']), 0, ',', '.'); ?></td>
                                             <?php } ?>
@@ -300,7 +304,7 @@ class TFIndex_Thuyen extends Widget_Base {
                                     <tr>
                                         <td><?php echo $item['name']; ?></td>
                                         <td><?php print_r($codes); ?></td>
-                                        <td style="border-right: unset;">
+                                        <td style="border-right: unset; text-align: center">
                                             <a class="top-co-phieu-report"
                                                href="#" onclick="return false;"
                                                data-event="Ngành <?php echo $item['name']; ?>">Xem báo cáo</a>
@@ -329,7 +333,7 @@ class TFIndex_Thuyen extends Widget_Base {
                                         <td><?php echo $item['top_industry']; ?></td>
                                         <td><?php echo $item['top_price_expected']; ?></td>
                                         <td><?php echo $item['top_price_current']; ?></td>
-                                        <td style="border-right: unset;"><?php echo $item['top_status'] ?></td>
+                                        <td style="border-right: unset; text-align: center"><?php echo $item['top_status'] ?></td>
                                     </tr>
                                 <?php } ?>
                             </table>

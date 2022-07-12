@@ -195,8 +195,8 @@
 			modal.hide();
 		}
 
-		$('.top-co-phieu-report').on('click', function (e) {
-			console.log(e)
+		// $('.top-co-phieu-report').on('click', function (e) {
+		$(document).on('click','.top-co-phieu-report',function(){
 			const eventName = $(this).data("event");
 			const tfindexEvent = $('#tfindex-event');
 			tfindexEvent.val(eventName);

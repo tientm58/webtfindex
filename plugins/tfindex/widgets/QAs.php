@@ -191,7 +191,7 @@ class TFIndex_QAs extends Widget_Base {
             <div class="qas tabs">
                 <?php foreach ( $arr as $el ): ?>
                     <div class="qas-item tab">
-                        <input type="radio" id="<?php echo 'qa-' . $el['id']; ?>" name="rd">
+                        <input type="checkbox" id="<?php echo 'qa-' . $el['id']; ?>" name="rd">
                         <label class="tab-label" for="<?php echo 'qa-' . $el['id']; ?>"><?php echo $el['question']; ?></label>
                         <div class="tab-content"><?php echo $el['answer']; ?></div>
                     </div>

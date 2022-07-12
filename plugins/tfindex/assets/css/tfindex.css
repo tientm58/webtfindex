@@ -1339,3 +1339,55 @@ input#tfindex-event:hover {
     line-height: 32px;
     color: #F2F2F2;
 }
+
+
+.thuyen .slide-arrow-left {
+    /*transform: rotate(0deg);*/
+    -webkit-mask-image: url(../images/arrow-2.svg);
+    mask-image: url(../images/arrow-2.svg);
+    background-color: #BDBDBD;
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 10px;
+    padding: 0;
+    position: absolute;
+    z-index: 99;
+    transform: rotate(-90deg) translateY(-50%) translateX(-150%);
+    /*top: 50%;*/
+    left: -45px;
+    top: 260px;
+}
+
+.thuyen .slide-arrow-right {
+    /*transform: rotate(0deg);*/
+    -webkit-mask-image: url(../images/arrow-2.svg);
+    mask-image: url(../images/arrow-2.svg);
+    background-color: #BDBDBD;
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 10px;
+    padding: 0;
+    position: absolute;
+    z-index: 99;
+    transform: rotate(90deg) translateY(-50%) translateX(-150%);
+    /*top: 50%;*/
+    right: -45px;
+    top: 300px;
+}
+
+.thuyen .slide-arrow-left:hover,
+.thuyen .slide-arrow-right:hover {
+    background: #F5B236;
+}
+
+.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-bullet-active-main {
+    background: #fff;
+    width: 20px;
+    height: 5px;
+    border-radius: 5px;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    background: #BDBDBD;
+    opacity: 1;
+}

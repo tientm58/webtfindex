@@ -250,8 +250,10 @@ class TFIndex_Thuyen extends Widget_Base {
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
+
                             </div>
                         </div>
+                        <div class="swiper-pagination"></div>
                     </div>
 
                     <div class="ast-row">

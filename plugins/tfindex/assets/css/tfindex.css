@@ -1413,3 +1413,47 @@ input#tfindex-event:hover {
     margin: auto;
     padding: 15px;
 }
+
+.join-step {
+    position: relative;
+}
+
+.join-step:before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 9;
+    border-radius: 50%;
+    background-color: #F1912F;
+    right: 5px;
+    top: 88px;
+}
+
+.join-step:after {
+    content: "";
+    position: absolute;
+    transform: rotate(-180deg) translateY(-50%) translateX(-150%);
+    width: 28px;
+    height: 22px;
+    z-index: 99;
+    /* background-image: url(../images/arrow.svg); */
+    -webkit-mask-image: url(../images/arrow.svg);
+    mask-image: url(../images/arrow.svg);
+    right: 55px;
+    top: 85px;
+    color: #fff;
+    background: #fff;
+}
+
+.join-step.step-1:before {
+    background-color: #F1912F;
+}
+
+.join-step.step-2:before {
+    background-color: #F5B236;
+}
+
+.join-step.step-3:before {
+    background-color: #F8C847;
+}

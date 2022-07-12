@@ -1400,12 +1400,14 @@ input#tfindex-event:hover {
     opacity: 1;
 }
 
-#tfindex-thuyen-success-popup .modal-content {
+#tfindex-thuyen-success-popup .modal-content,
+#tfindex-talk-success-popup .modal-content {
     background: #fff;
     padding: 60px 30px;
 }
 
-#tfindex-thuyen-success-popup .success-image {
+#tfindex-thuyen-success-popup .success-image,
+#tfindex-talk-success-popup .success-image {
     background: url(../images/success.png);
     width: 80px;
     height: 80px;

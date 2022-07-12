@@ -124,11 +124,21 @@
 		});
 
 		let modal = $("#tfindex-form-popup");
-		let closeBtn = $(".close")[0];
+		let success = $("#tfindex-talk-success-popup");
+		// let closeBtn = $(".close")[0];
 
-		closeBtn.onclick = function() {
+		// closeBtn.onclick = function() {
+		// 	modal.hide();
+		// }
+
+		$(document).on('click','#tfindex-form-popup .close',function(){
 			modal.hide();
-		}
+		});
+
+		$(document).on('click','#tfindex-talk-success-popup .close',function(){
+			success.hide();
+		});
+
 
 		$('.tftalk-swiper .tfindex-register').on('click', function (e) {
 			const eventName = $(this).data("event");
@@ -153,6 +163,7 @@
 					data: data
 				}).done(function() {
 					modal.hide();
+					success.show();
 				});
 			});
 		});
@@ -386,13 +397,6 @@
 				},
 			},
 		});
-
-		// When the user clicks anywhere outside of the modal, close it
-		// window.onclick = function(event) {
-		// 	if (event.target == modal) {
-		// 		modal.style.display = "none";
-		// 	}
-		// }
 
 		closeBtn.onclick = function() {
 			modal.hide();

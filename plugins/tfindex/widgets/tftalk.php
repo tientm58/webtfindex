@@ -278,6 +278,20 @@ class TFIndex_TFTalk extends Widget_Base {
                         </div>
                     </div>
                 </div>
+
+                <div id="tfindex-talk-success-popup" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="success-image"></div>
+                            <h3 class="title-center">Đăng ký thành công</h3>
+                            <div class="description">Cảm ơn bạn đã đăng ký nhận báo cáo phân tích từ TFindex. Bạn vui lòng kiểm tra email để xem và tải xuống báo cáo. Trong trường hợp bạn cần sự giúp đỡ, vui lòng liên lạc với chúng tôi qua địa chỉ email help@tfindex.com.vn</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 	<?php }

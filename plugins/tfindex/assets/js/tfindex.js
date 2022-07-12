@@ -189,11 +189,20 @@
 		});
 
 		let modal = $("#tfindex-thuyen-form-popup");
-		let closeBtn = $(".close")[0];
+		let success = $("#tfindex-thuyen-success-popup");
+		// let closeBtn = $(".close");
 
-		closeBtn.onclick = function() {
+		// closeBtn.onclick = function() {
+		// 	modal.hide();
+		// }
+
+		$(document).on('click','#tfindex-thuyen-form-popup .close',function(){
 			modal.hide();
-		}
+		});
+
+		$(document).on('click','#tfindex-thuyen-success-popup .close',function(){
+			success.hide();
+		});
 
 		// $('.top-co-phieu-report').on('click', function (e) {
 		$(document).on('click','.top-co-phieu-report',function(){
@@ -219,6 +228,7 @@
 					data: data
 				}).done(function(e) {
 					modal.hide();
+					success.show();
 				});
 			});
 		});

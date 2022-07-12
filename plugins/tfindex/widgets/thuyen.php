@@ -262,27 +262,29 @@ class TFIndex_Thuyen extends Widget_Base {
                                 <h3>Bảng minh họa dòng tiền</h3>
                                 <div class="small">Với số tiền tích lũy: <?php echo number_format($money,  0, ',', '.'); ?> Đ/Tháng, đơn vị tính: VNĐ</div>
                             </div>
-                            <div class="content-area">
-                                <table class="table">
-                                    <tr>
-                                        <th class="highlight" style="max-width: 100px;" rowspan="2">LỢI NHUẬN KỲ VỌNG HÀNG NĂM</th>
-                                        <th colspan="<?php echo sizeof($years); ?>">SỐ NĂM TÍCH LUỸ TÀI SẢN (KHÔNG RÚT RA GIỮA KỲ)</th>
-                                    </tr>
-                                    <tr>
-                                        <?php foreach ($years as $item) {?>
-                                            <th><?php echo $item['year']; ?> Năm</th>
-                                        <?php } ?>
-                                    </tr>
-                                    <?php foreach ($percents as $item) {
-                                        ?>
+                            <div class="outer-content">
+                                <div class="content-area">
+                                    <table class="table">
                                         <tr>
-                                            <td class="highlight"><?php echo $item['percent']; ?>%</td>
-                                            <?php foreach ($years as $year) {?>
-                                                <td><?php echo number_format(interest_rate($money, $year['year'], $item['percent']), 0, ',', '.'); ?></td>
+                                            <th class="highlight" style="max-width: 100px;" rowspan="2">LỢI NHUẬN KỲ VỌNG HÀNG NĂM</th>
+                                            <th colspan="<?php echo sizeof($years); ?>">SỐ NĂM TÍCH LUỸ TÀI SẢN (KHÔNG RÚT RA GIỮA KỲ)</th>
+                                        </tr>
+                                        <tr>
+                                            <?php foreach ($years as $item) {?>
+                                                <th><?php echo $item['year']; ?> Năm</th>
                                             <?php } ?>
                                         </tr>
-                                    <?php } ?>
-                                </table>
+                                        <?php foreach ($percents as $item) {
+                                            ?>
+                                            <tr>
+                                                <td class="highlight"><?php echo $item['percent']; ?>%</td>
+                                                <?php foreach ($years as $year) {?>
+                                                    <td><?php echo number_format(interest_rate($money, $year['year'], $item['percent']), 0, ',', '.'); ?></td>
+                                                <?php } ?>
+                                            </tr>
+                                        <?php } ?>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -409,6 +411,20 @@ class TFIndex_Thuyen extends Widget_Base {
                                 <button class="btn btn-primary tfindex-register-this" type="submit">Đăng ký</button>
                             </form>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tfindex-thuyen-success-popup" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="success-image"></div>
+                        <h3 class="title-center">Đăng ký thành công</h3>
+                        <div class="description">Cảm ơn bạn đã đăng ký nhận báo cáo phân tích từ TFindex. Bạn vui lòng kiểm tra email để xem và tải xuống báo cáo. Trong trường hợp bạn cần sự giúp đỡ, vui lòng liên lạc với chúng tôi qua địa chỉ email help@tfindex.com.vn</div>
                     </div>
                 </div>
             </div>

@@ -1380,6 +1380,14 @@ input#tfindex-event:hover {
     background: #F5B236;
 }
 
+.thuyen .outer-content {
+    padding: 0 30px;
+}
+
+.thuyen .outer-content .content-area {
+    overflow-x: auto;
+}
+
 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-bullet-active-main {
     background: #fff;
     width: 20px;
@@ -1390,4 +1398,18 @@ input#tfindex-event:hover {
 .swiper-pagination .swiper-pagination-bullet {
     background: #BDBDBD;
     opacity: 1;
+}
+
+#tfindex-thuyen-success-popup .modal-content {
+    background: #fff;
+    padding: 60px 30px;
+}
+
+#tfindex-thuyen-success-popup .success-image {
+    background: url(../images/success.png);
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    margin: auto;
+    padding: 15px;
 }

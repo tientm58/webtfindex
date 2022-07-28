@@ -1249,7 +1249,7 @@ input#tfindex-event:hover {
 }
 
 #tfindex-thuyen-form-popup input {
-    border-radius: 30px;
+    border-radius: 10px;
     width: 100%;
 }
 
@@ -1458,4 +1458,26 @@ input#tfindex-event:hover {
 
 .join-step.step-3:before {
     background-color: #F8C847;
+}
+
+#tfindex-thuyen-form-popup form label {
+    display: none;
+}
+
+#tfindex-thuyen-form-popup form input {
+    margin-bottom: 15px;
+}
+
+#tfindex-thuyen-success-popup .modal-body .title-center {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    padding: 30px 0 0 0;
+}
+
+#tfindex-thuyen-success-popup .modal-body .description {
+    text-align: center;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
 }

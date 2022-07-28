@@ -387,6 +387,10 @@ class TFIndex_Thuyen extends Widget_Base {
                     <div class="modal-body">
                         <div class="tfindex-form-events">
                             <h3 class="title-center">Đăng ký nhận thông báo</h3>
+                            <div class="noti" style="text-align: center;
+    padding: 5px 30px;"><span>
+                                    Sau khi điền thông tin bên dưới, bản Báo cáo sẽ được tự động gửi đến email của bạn.
+                                </span></div>
                             <form id="tfindex-form-events" class="needs-validation">
                                 <div class="form-row">
                                     <div class="col-md-4 mb-3">
@@ -408,7 +412,7 @@ class TFIndex_Thuyen extends Widget_Base {
                                         <input type="text" class="form-control" id="tfindex-register-phone" placeholder="Số điện thoại" required minlength="10" maxlength="11">
                                     </div>
                                 </div>
-                                <button class="btn btn-primary tfindex-register-this" type="submit">Đăng ký</button>
+                                <button class="btn btn-primary tfindex-register-this" type="submit" style="width: 100%; margin-top: 30px">Đăng ký</button>
                             </form>
                         </div>
                     </div>
